@@ -1,4 +1,4 @@
 extends PointLight2D
 
-func _on_body_entered(_body):
+func _on_brazier_entered(_body):
 	enabled = true

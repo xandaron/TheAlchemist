@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://glncfueds01"
-path="res://.godot/imported/brazier_lit_03.png-c2c9f7f996341148a381c72dfde887f2.ctex"
+uid="uid://lcq7dn2o28rc"
+path="res://.godot/imported/player.png-e9ae52a3a676789a3f54b1c9f6526ecd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/brazier_lit_03.png"
-dest_files=["res://.godot/imported/brazier_lit_03.png-c2c9f7f996341148a381c72dfde887f2.ctex"]
+source_file="res://assets/textures/player/player.png"
+dest_files=["res://.godot/imported/player.png-e9ae52a3a676789a3f54b1c9f6526ecd.ctex"]
 
 [params]
 
