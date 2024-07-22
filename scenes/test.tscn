@@ -1,61 +1,141 @@
-[gd_scene load_steps=9 format=3 uid="uid://dgri5x36xf877"]
+[gd_scene load_steps=20 format=3 uid="uid://dgri5x36xf877"]
 
 [ext_resource type="Script" path="res://scripts/scene_script.gd" id="1_8nsuj"]
 [ext_resource type="Script" path="res://scripts/AreaCollider.gd" id="2_4ou38"]
 [ext_resource type="Texture2D" uid="uid://cij2wois46i3c" path="res://assets/brazier.png" id="3_b58qi"]
-[ext_resource type="Script" path="res://scripts/DynamicSprite.gd" id="4_hg33x"]
 [ext_resource type="Script" path="res://scripts/PlayerCharacter.gd" id="5_0yvrj"]
+[ext_resource type="Script" path="res://scenes/Light.gd" id="5_rrma4"]
 [ext_resource type="Texture2D" uid="uid://lcq7dn2o28rc" path="res://assets/player.png" id="6_i1mrs"]
+[ext_resource type="Texture2D" uid="uid://ce4yingp2lw4i" path="res://assets/brazier_lit_00.png" id="6_lcpat"]
+[ext_resource type="Texture2D" uid="uid://2ke37ld7a5i4" path="res://assets/brazier_lit_01.png" id="7_ocb81"]
+[ext_resource type="Texture2D" uid="uid://3af67mfn6qgf" path="res://assets/brazier_lit_02.png" id="8_xebxs"]
+[ext_resource type="Texture2D" uid="uid://glncfueds01" path="res://assets/brazier_lit_03.png" id="9_eaiot"]
+[ext_resource type="Texture2D" uid="uid://dxgk2voselcef" path="res://assets/brazier_lit_04.png" id="10_5splo"]
+[ext_resource type="Script" path="res://scenes/Brazier_Animated.gd" id="11_v043c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7nov6"]
 size = Vector2(123, 121)
 
+[sub_resource type="Gradient" id="Gradient_i3ou5"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.798701)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_02l1g"]
+gradient = SubResource("Gradient_i3ou5")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bxuc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lcpat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ocb81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xebxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eaiot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5splo")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b58qi")
+}],
+"loop": true,
+"name": &"unlit",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ilib"]
 size = Vector2(110, 179)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8liow"]
+size = Vector2(39.5, 734)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmeo"]
+size = Vector2(1152.5, 41)
 
 [node name="Scene root" type="Node2D"]
 script = ExtResource("1_8nsuj")
 
 [node name="Brazier_00" type="Area2D" parent="."]
-position = Vector2(201, 313)
-collision_mask = 2
+position = Vector2(326, 334)
+collision_layer = 2
 script = ExtResource("2_4ou38")
 
-[node name="BoundingBox" type="CollisionShape2D" parent="Brazier_00"]
+[node name="Bounding_Box" type="CollisionShape2D" parent="Brazier_00"]
 shape = SubResource("RectangleShape2D_7nov6")
+metadata/_edit_lock_ = true
 
-[node name="Sprite" type="Sprite2D" parent="Brazier_00"]
+[node name="Light" type="PointLight2D" parent="Brazier_00"]
 scale = Vector2(5, 5)
-texture = ExtResource("3_b58qi")
-script = ExtResource("4_hg33x")
+enabled = false
+color = Color(0.894118, 0.14902, 0, 0.117647)
+energy = 8.0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_02l1g")
+texture_scale = 2.0
+script = ExtResource("5_rrma4")
+metadata/_edit_lock_ = true
 
-[node name="Brazier_01" type="Area2D" parent="."]
-position = Vector2(200, 65)
-collision_mask = 2
-script = ExtResource("2_4ou38")
-
-[node name="BoundingBox" type="CollisionShape2D" parent="Brazier_01"]
-shape = SubResource("RectangleShape2D_7nov6")
-
-[node name="Sprite" type="Sprite2D" parent="Brazier_01"]
+[node name="Sprite_Stack" type="AnimatedSprite2D" parent="Brazier_00"]
 scale = Vector2(5, 5)
-texture = ExtResource("3_b58qi")
-script = ExtResource("4_hg33x")
+sprite_frames = SubResource("SpriteFrames_1bxuc")
+animation = &"unlit"
+script = ExtResource("11_v043c")
+metadata/_edit_lock_ = true
 
 [node name="Player_Character" type="CharacterBody2D" parent="."]
 position = Vector2(560, 350)
-collision_layer = 3
+collision_mask = 4
 script = ExtResource("5_0yvrj")
 
-[node name="BoundingBox" type="CollisionShape2D" parent="Player_Character"]
+[node name="Bounding_Box" type="CollisionShape2D" parent="Player_Character"]
 position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_4ilib")
 debug_color = Color(0, 0.579059, 0.807016, 0.42)
+metadata/_edit_lock_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Player_Character"]
 position = Vector2(5, 0)
 scale = Vector2(10, 10)
 texture = ExtResource("6_i1mrs")
+metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="Brazier_00" to="Brazier_00/Sprite" method="_on_area_entered"]
-[connection signal="body_entered" from="Brazier_01" to="Brazier_01/Sprite" method="_on_area_entered"]
+[node name="Scene_Walls" type="StaticBody2D" parent="."]
+position = Vector2(-13, 324)
+collision_layer = 4
+
+[node name="Left_Wall" type="CollisionShape2D" parent="Scene_Walls"]
+position = Vector2(-9.25, 1)
+shape = SubResource("RectangleShape2D_8liow")
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" type="CollisionShape2D" parent="Scene_Walls"]
+position = Vector2(1187, 0)
+shape = SubResource("RectangleShape2D_8liow")
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" type="CollisionShape2D" parent="Scene_Walls"]
+position = Vector2(590, 346)
+shape = SubResource("RectangleShape2D_lfmeo")
+metadata/_edit_lock_ = true
+
+[node name="Top_Wall" type="CollisionShape2D" parent="Scene_Walls"]
+position = Vector2(589.75, -345.5)
+shape = SubResource("RectangleShape2D_lfmeo")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="Brazier_00" to="Brazier_00/Light" method="_on_body_entered"]
+[connection signal="body_entered" from="Brazier_00" to="Brazier_00/Sprite_Stack" method="_on_brazie_entered"]
