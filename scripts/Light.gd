@@ -17,4 +17,3 @@ func _process(delta):
 	else:
 		energy = 7
 		control = false
-	

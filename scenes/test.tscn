@@ -1,34 +1,20 @@
-[gd_scene load_steps=26 format=3 uid="uid://dgri5x36xf877"]
+[gd_scene load_steps=31 format=3 uid="uid://dgri5x36xf877"]
 
-[ext_resource type="Script" path="res://scripts/scene_script.gd" id="1_8nsuj"]
+[ext_resource type="Script" path="res://scripts/Scene.gd" id="1_8nsuj"]
 [ext_resource type="Texture2D" uid="uid://dv4qppu42dt41" path="res://assets/textures/green.jpg" id="2_ewqpb"]
 [ext_resource type="Texture2D" uid="uid://cij2wois46i3c" path="res://assets/textures/brazier/brazier.png" id="3_b58qi"]
-[ext_resource type="Script" path="res://scripts/PlayerCharacter.gd" id="5_0yvrj"]
-[ext_resource type="Script" path="res://scenes/Light.gd" id="5_rrma4"]
+[ext_resource type="Script" path="res://scripts/Player_Character.gd" id="5_0yvrj"]
+[ext_resource type="Script" path="res://scripts/Light.gd" id="5_rrma4"]
 [ext_resource type="Texture2D" uid="uid://lcq7dn2o28rc" path="res://assets/textures/player/player.png" id="6_i1mrs"]
 [ext_resource type="Texture2D" uid="uid://ce4yingp2lw4i" path="res://assets/textures/brazier/brazier_lit_00.png" id="6_lcpat"]
 [ext_resource type="Texture2D" uid="uid://2ke37ld7a5i4" path="res://assets/textures/brazier/brazier_lit_01.png" id="7_ocb81"]
 [ext_resource type="Texture2D" uid="uid://3af67mfn6qgf" path="res://assets/textures/brazier/brazier_lit_02.png" id="8_xebxs"]
 [ext_resource type="Texture2D" uid="uid://glncfueds01" path="res://assets/textures/brazier/brazier_lit_03.png" id="9_eaiot"]
 [ext_resource type="Texture2D" uid="uid://dxgk2voselcef" path="res://assets/textures/brazier/brazier_lit_04.png" id="10_5splo"]
-[ext_resource type="Script" path="res://scenes/Brazier_Particles.gd" id="11_bkpif"]
-[ext_resource type="Script" path="res://scenes/Brazier_Animated.gd" id="11_v043c"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nov6"]
-size = Vector2(123, 121)
-
-[sub_resource type="Gradient" id="Gradient_i3ou5"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.363636, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_02l1g"]
-gradient = SubResource("Gradient_i3ou5")
-width = 16
-height = 16
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
+[ext_resource type="Script" path="res://scripts/Brazier_Particles.gd" id="11_bkpif"]
+[ext_resource type="Script" path="res://scripts/Brazier_Animated.gd" id="11_v043c"]
+[ext_resource type="Script" path="res://scripts/Mob.gd" id="14_a5n55"]
+[ext_resource type="Texture2D" uid="uid://cga8l8bs83g7v" path="res://assets/textures/goblin/goblin.png" id="15_s12mv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1bxuc"]
 animations = [{
@@ -61,6 +47,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1uo4"]
+size = Vector2(40, 35)
+
+[sub_resource type="Gradient" id="Gradient_i3ou5"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.363636, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_02l1g"]
+gradient = SubResource("Gradient_i3ou5")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4vxig"]
 lifetime_randomness = 0.7
 particle_flag_disable_z = true
@@ -92,15 +94,8 @@ fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1uo4"]
-size = Vector2(40, 35)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ilib"]
-size = Vector2(110, 179)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nxbl3"]
-cull_mode = 1
-polygon = PackedVector2Array(-25, 60, 25, 60, 26, -50, -25, -50)
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2tg7"]
+radius = 55.0091
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8liow"]
 size = Vector2(39.5, 731)
@@ -108,23 +103,51 @@ size = Vector2(39.5, 731)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmeo"]
 size = Vector2(1152.5, 41)
 
-[node name="Scene root" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyj0x"]
+size = Vector2(40, 70)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_drlgh"]
+cull_mode = 1
+polygon = PackedVector2Array(-15, 35, 15, 35, 15, -10, -15, -10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b3q3r"]
+radius = 70.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ilib"]
+size = Vector2(69, 119.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nxbl3"]
+cull_mode = 1
+polygon = PackedVector2Array(-25, 60, 25, 60, 26, -50, -25, -50)
+
+[node name="Root" type="Node"]
+
+[node name="Scene_Root" type="Node2D" parent="."]
 script = ExtResource("1_8nsuj")
 
-[node name="background" type="Sprite2D" parent="."]
-position = Vector2(584, 326)
+[node name="background" type="Sprite2D" parent="Scene_Root"]
+position = Vector2(580, 321)
 scale = Vector2(0.615234, 0.558997)
 texture = ExtResource("2_ewqpb")
-
-[node name="Brazier_00" type="Area2D" parent="."]
-position = Vector2(319, 317)
-collision_layer = 2
-
-[node name="Bounding_Box" type="CollisionShape2D" parent="Brazier_00"]
-shape = SubResource("RectangleShape2D_7nov6")
 metadata/_edit_lock_ = true
 
-[node name="Light" type="PointLight2D" parent="Brazier_00"]
+[node name="Brazier_00" type="StaticBody2D" parent="Scene_Root"]
+position = Vector2(319, 317)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite_Stack" type="AnimatedSprite2D" parent="Scene_Root/Brazier_00"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_1bxuc")
+animation = &"unlit"
+script = ExtResource("11_v043c")
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Scene_Root/Brazier_00"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_g1uo4")
+
+[node name="Light" type="PointLight2D" parent="Scene_Root/Brazier_00"]
 scale = Vector2(5, 5)
 enabled = false
 color = Color(0.894118, 0.14902, 0, 0.117647)
@@ -136,14 +159,7 @@ texture_scale = 7.71
 script = ExtResource("5_rrma4")
 metadata/_edit_lock_ = true
 
-[node name="Sprite_Stack" type="AnimatedSprite2D" parent="Brazier_00"]
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_1bxuc")
-animation = &"unlit"
-script = ExtResource("11_v043c")
-metadata/_edit_lock_ = true
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Brazier_00"]
+[node name="Smoke" type="GPUParticles2D" parent="Scene_Root/Brazier_00"]
 emitting = false
 amount = 6
 amount_ratio = 0.8
@@ -154,59 +170,97 @@ randomness = 0.8
 script = ExtResource("11_bkpif")
 metadata/_edit_lock_ = true
 
-[node name="Body" type="StaticBody2D" parent="Brazier_00"]
+[node name="Trigger" type="Area2D" parent="Scene_Root/Brazier_00"]
+visible = false
+collision_layer = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Scene_Root/Brazier_00/Trigger"]
+shape = SubResource("CircleShape2D_n2tg7")
+metadata/_edit_lock_ = true
+
+[node name="Obstacle" type="NavigationObstacle2D" parent="Scene_Root/Brazier_00"]
+visible = false
+vertices = PackedVector2Array(-20, 20, -20, -15, 20, -15, 20, 20)
+
+[node name="Scene_Walls" type="StaticBody2D" parent="Scene_Root"]
+position = Vector2(-13, 324)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Left_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
+position = Vector2(-7, 0.5)
+shape = SubResource("RectangleShape2D_8liow")
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
+position = Vector2(1185, 0)
+shape = SubResource("RectangleShape2D_8liow")
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
+position = Vector2(589, 345)
+shape = SubResource("RectangleShape2D_lfmeo")
+metadata/_edit_lock_ = true
+
+[node name="Top_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
+position = Vector2(589, -345)
+shape = SubResource("RectangleShape2D_lfmeo")
+metadata/_edit_lock_ = true
+
+[node name="Goblin_00" type="CharacterBody2D" parent="Scene_Root"]
+position = Vector2(318, 156)
 collision_layer = 4
+collision_mask = 2
+script = ExtResource("14_a5n55")
 
-[node name="Bounding_Box" type="CollisionShape2D" parent="Brazier_00/Body"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_g1uo4")
+[node name="Sprite2D" type="Sprite2D" parent="Scene_Root/Goblin_00"]
+scale = Vector2(5, 5)
+texture = ExtResource("15_s12mv")
+metadata/_edit_lock_ = true
 
-[node name="Player_Character" type="CharacterBody2D" parent="."]
-position = Vector2(734, 330)
-collision_mask = 4
+[node name="Bounding_Box" type="CollisionShape2D" parent="Scene_Root/Goblin_00"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_wyj0x")
+metadata/_edit_lock_ = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Scene_Root/Goblin_00"]
+occluder = SubResource("OccluderPolygon2D_drlgh")
+metadata/_edit_lock_ = true
+
+[node name="Attack_Area" type="Area2D" parent="Scene_Root/Goblin_00"]
+visible = false
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_Root/Goblin_00/Attack_Area"]
+shape = SubResource("CircleShape2D_b3q3r")
+metadata/_edit_lock_ = true
+
+[node name="Player_Character" type="CharacterBody2D" parent="Scene_Root"]
+position = Vector2(576, 322)
+collision_mask = 2
 script = ExtResource("5_0yvrj")
 
-[node name="Bounding_Box" type="CollisionShape2D" parent="Player_Character"]
-position = Vector2(0, -20)
-shape = SubResource("RectangleShape2D_4ilib")
-debug_color = Color(0, 0.579059, 0.807016, 0.42)
-metadata/_edit_lock_ = true
-
-[node name="Occluder" type="LightOccluder2D" parent="Player_Character"]
-scale = Vector2(1, 1)
-occluder = SubResource("OccluderPolygon2D_nxbl3")
-metadata/_edit_lock_ = true
-
-[node name="Sprite" type="Sprite2D" parent="Player_Character"]
+[node name="Sprite" type="Sprite2D" parent="Scene_Root/Player_Character"]
 position = Vector2(5, 0)
 scale = Vector2(10, 10)
 texture = ExtResource("6_i1mrs")
 metadata/_edit_lock_ = true
 
-[node name="Scene_Walls" type="StaticBody2D" parent="."]
-position = Vector2(-13, 324)
-collision_layer = 4
-
-[node name="Left_Wall" type="CollisionShape2D" parent="Scene_Walls"]
-position = Vector2(-7, 0.5)
-shape = SubResource("RectangleShape2D_8liow")
+[node name="Bounding_Box" type="CollisionShape2D" parent="Scene_Root/Player_Character"]
+position = Vector2(-0.5, 9.75)
+shape = SubResource("RectangleShape2D_4ilib")
+debug_color = Color(0, 0.579059, 0.807016, 0.42)
 metadata/_edit_lock_ = true
 
-[node name="Right_Wall" type="CollisionShape2D" parent="Scene_Walls"]
-position = Vector2(1185, 0)
-shape = SubResource("RectangleShape2D_8liow")
+[node name="Occluder" type="LightOccluder2D" parent="Scene_Root/Player_Character"]
+occluder = SubResource("OccluderPolygon2D_nxbl3")
 metadata/_edit_lock_ = true
 
-[node name="Bottom_Wall" type="CollisionShape2D" parent="Scene_Walls"]
-position = Vector2(589, 345)
-shape = SubResource("RectangleShape2D_lfmeo")
-metadata/_edit_lock_ = true
-
-[node name="Top_Wall" type="CollisionShape2D" parent="Scene_Walls"]
-position = Vector2(589, -345)
-shape = SubResource("RectangleShape2D_lfmeo")
-metadata/_edit_lock_ = true
-
-[connection signal="body_entered" from="Brazier_00" to="Brazier_00/Light" method="_on_brazier_entered"]
-[connection signal="body_entered" from="Brazier_00" to="Brazier_00/Sprite_Stack" method="_on_brazie_entered"]
-[connection signal="body_entered" from="Brazier_00" to="Brazier_00/GPUParticles2D" method="_on_brazier_entered"]
+[connection signal="body_entered" from="Scene_Root/Brazier_00/Trigger" to="Scene_Root/Brazier_00/Sprite_Stack" method="_on_brazie_entered"]
+[connection signal="body_entered" from="Scene_Root/Brazier_00/Trigger" to="Scene_Root/Brazier_00/Light" method="_on_brazier_entered"]
+[connection signal="body_entered" from="Scene_Root/Brazier_00/Trigger" to="Scene_Root/Brazier_00/Smoke" method="_on_brazier_entered"]
+[connection signal="attack_player" from="Scene_Root/Goblin_00" to="Scene_Root/Player_Character" method="_on_attack_player" binds= [0]]
+[connection signal="body_entered" from="Scene_Root/Goblin_00/Attack_Area" to="Scene_Root/Goblin_00" method="_on_attack_area_entered"]
+[connection signal="body_exited" from="Scene_Root/Goblin_00/Attack_Area" to="Scene_Root/Goblin_00" method="_on_attack_area_exited"]
