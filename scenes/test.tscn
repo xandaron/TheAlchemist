@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dgri5x36xf877"]
+
+[ext_resource type="Script" path="res://scripts/scene_script.gd" id="1_8nsuj"]
+[ext_resource type="Script" path="res://scripts/AreaCollider.gd" id="2_4ou38"]
+[ext_resource type="Texture2D" uid="uid://cij2wois46i3c" path="res://assets/brazier.png" id="3_b58qi"]
+[ext_resource type="Script" path="res://scripts/DynamicSprite.gd" id="4_hg33x"]
+[ext_resource type="Script" path="res://scripts/PlayerCharacter.gd" id="5_0yvrj"]
+[ext_resource type="Texture2D" uid="uid://lcq7dn2o28rc" path="res://assets/player.png" id="6_i1mrs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nov6"]
+size = Vector2(123, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ilib"]
+size = Vector2(110, 179)
+
+[node name="Scene root" type="Node2D"]
+script = ExtResource("1_8nsuj")
+
+[node name="Brazier_00" type="Area2D" parent="."]
+position = Vector2(201, 313)
+collision_mask = 2
+script = ExtResource("2_4ou38")
+
+[node name="BoundingBox" type="CollisionShape2D" parent="Brazier_00"]
+shape = SubResource("RectangleShape2D_7nov6")
+
+[node name="Sprite" type="Sprite2D" parent="Brazier_00"]
+scale = Vector2(5, 5)
+texture = ExtResource("3_b58qi")
+script = ExtResource("4_hg33x")
+
+[node name="Brazier_01" type="Area2D" parent="."]
+position = Vector2(200, 65)
+collision_mask = 2
+script = ExtResource("2_4ou38")
+
+[node name="BoundingBox" type="CollisionShape2D" parent="Brazier_01"]
+shape = SubResource("RectangleShape2D_7nov6")
+
+[node name="Sprite" type="Sprite2D" parent="Brazier_01"]
+scale = Vector2(5, 5)
+texture = ExtResource("3_b58qi")
+script = ExtResource("4_hg33x")
+
+[node name="Player_Character" type="CharacterBody2D" parent="."]
+position = Vector2(560, 350)
+collision_layer = 3
+script = ExtResource("5_0yvrj")
+
+[node name="BoundingBox" type="CollisionShape2D" parent="Player_Character"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_4ilib")
+debug_color = Color(0, 0.579059, 0.807016, 0.42)
+
+[node name="Sprite" type="Sprite2D" parent="Player_Character"]
+position = Vector2(5, 0)
+scale = Vector2(10, 10)
+texture = ExtResource("6_i1mrs")
+
+[connection signal="body_entered" from="Brazier_00" to="Brazier_00/Sprite" method="_on_area_entered"]
+[connection signal="body_entered" from="Brazier_01" to="Brazier_01/Sprite" method="_on_area_entered"]
