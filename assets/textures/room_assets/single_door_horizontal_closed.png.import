@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd3cfjlhyfqi0"
-path="res://.godot/imported/Room_Mock_Alligned.png-b93451bfa2cc0d996fa5cfaf4ed6e0b2.ctex"
+uid="uid://cfg5oro7a5acf"
+path="res://.godot/imported/single_door_horizontal_closed.png-45a6d99d76f644008224ee43904d7b3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Room_Mock_Alligned.png"
-dest_files=["res://.godot/imported/Room_Mock_Alligned.png-b93451bfa2cc0d996fa5cfaf4ed6e0b2.ctex"]
+source_file="res://assets/textures/room_assets/single_door_horizontal_closed.png"
+dest_files=["res://.godot/imported/single_door_horizontal_closed.png-45a6d99d76f644008224ee43904d7b3b.ctex"]
 
 [params]
 

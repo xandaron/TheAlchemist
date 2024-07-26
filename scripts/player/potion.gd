@@ -23,7 +23,7 @@ func destroy():
 	call_deferred("queue_free")
 
 func _physics_process(delta):
-	if GlobalVariables.pause:
+	if GlobalVariables.paused:
 		return
 	position += direction * speed * delta
 	rotate((speed / 10) * delta)

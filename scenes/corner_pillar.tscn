@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://5jwib8f08mqj"]
+
+[ext_resource type="PackedScene" uid="uid://c28ajwxxwign1" path="res://scenes/2x_wall.tscn" id="1_lfmjl"]
+[ext_resource type="Script" path="res://scripts/sprite_fade.gd" id="2_n65l7"]
+[ext_resource type="Texture2D" uid="uid://dcfispp74dqoe" path="res://assets/textures/room_assets/wall_top_double_sided_04.png" id="2_t3d0a"]
+[ext_resource type="Script" path="res://scripts/random_double_sided_topper.gd" id="3_2adld"]
+[ext_resource type="PackedScene" uid="uid://c1u8raovvh4po" path="res://scenes/pillar.tscn" id="4_xrapt"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v45pi"]
+polygon = PackedVector2Array(22, 16, 16, 16, 16, -20, 22, -20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qosbr"]
+size = Vector2(6.5, 36)
+
+[node name="Corner_Pillar" type="Node2D"]
+y_sort_enabled = true
+
+[node name="2xWall" parent="." instance=ExtResource("1_lfmjl")]
+position = Vector2(0, -16)
+script = ExtResource("2_n65l7")
+metadata/_edit_lock_ = true
+
+[node name="Topper_00" type="Sprite2D" parent="."]
+position = Vector2(19, 0)
+rotation = 1.5708
+texture = ExtResource("2_t3d0a")
+script = ExtResource("3_2adld")
+metadata/_edit_lock_ = true
+
+[node name="Topper_01" type="Sprite2D" parent="."]
+position = Vector2(19, -32)
+rotation = 4.71239
+texture = ExtResource("2_t3d0a")
+script = ExtResource("3_2adld")
+metadata/_edit_lock_ = true
+
+[node name="Pillar" parent="." instance=ExtResource("4_xrapt")]
+position = Vector2(-8, 8)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_v45pi")
+metadata/_edit_lock_ = true
+
+[node name="Side_Wall" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Side_Wall"]
+position = Vector2(18.75, -2)
+shape = SubResource("RectangleShape2D_qosbr")

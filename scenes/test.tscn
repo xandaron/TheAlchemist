@@ -1,244 +1,25 @@
-[gd_scene load_steps=30 format=3 uid="uid://dgri5x36xf877"]
+[gd_scene load_steps=6 format=3 uid="uid://dgri5x36xf877"]
 
 [ext_resource type="Script" path="res://scripts/scene.gd" id="1_8nsuj"]
-[ext_resource type="Texture2D" uid="uid://bd3cfjlhyfqi0" path="res://assets/textures/Room_Mock_Alligned.png" id="2_6v8kg"]
-[ext_resource type="PackedScene" uid="uid://cwv0dil0xe2fi" path="res://scenes/potion.tscn" id="3_0pd6w"]
-[ext_resource type="Texture2D" uid="uid://cij2wois46i3c" path="res://assets/textures/brazier/brazier.png" id="3_b58qi"]
-[ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="5_0yvrj"]
-[ext_resource type="Script" path="res://scripts/brazier/brazier_light.gd" id="5_rrma4"]
-[ext_resource type="Texture2D" uid="uid://ce4yingp2lw4i" path="res://assets/textures/brazier/brazier_lit_00.png" id="6_lcpat"]
-[ext_resource type="Texture2D" uid="uid://2ke37ld7a5i4" path="res://assets/textures/brazier/brazier_lit_01.png" id="7_ocb81"]
-[ext_resource type="Texture2D" uid="uid://3af67mfn6qgf" path="res://assets/textures/brazier/brazier_lit_02.png" id="8_xebxs"]
-[ext_resource type="Texture2D" uid="uid://glncfueds01" path="res://assets/textures/brazier/brazier_lit_03.png" id="9_eaiot"]
-[ext_resource type="Texture2D" uid="uid://dxgk2voselcef" path="res://assets/textures/brazier/brazier_lit_04.png" id="10_5splo"]
-[ext_resource type="Script" path="res://scripts/brazier/brazier_particles.gd" id="11_bkpif"]
-[ext_resource type="Script" path="res://scripts/brazier/brazier_animated.gd" id="11_v043c"]
-[ext_resource type="Texture2D" uid="uid://djixsow72r05i" path="res://assets/textures/alchemist.png" id="16_xm82w"]
+[ext_resource type="PackedScene" uid="uid://bus4ua0jroihg" path="res://scenes/player.tscn" id="2_j2720"]
+[ext_resource type="PackedScene" uid="uid://1kwl3e8dkoi4" path="res://scenes/feast_room_construction.tscn" id="3_tt2cw"]
+[ext_resource type="Script" path="res://scripts/room.gd" id="5_xbb58"]
 [ext_resource type="Script" path="res://scripts/rooms.gd" id="17_3om0c"]
-[ext_resource type="Script" path="res://scripts/room.gd" id="18_do8uh"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1bxuc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_lcpat")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ocb81")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_xebxs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_eaiot")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_5splo")
-}],
-"loop": true,
-"name": &"lit",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_b58qi")
-}],
-"loop": true,
-"name": &"unlit",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1uo4"]
-size = Vector2(40, 35)
-
-[sub_resource type="Gradient" id="Gradient_i3ou5"]
-interpolation_mode = 2
-offsets = PackedFloat32Array(0.363636, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_02l1g"]
-gradient = SubResource("Gradient_i3ou5")
-width = 16
-height = 16
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4vxig"]
-lifetime_randomness = 0.7
-particle_flag_disable_z = true
-particle_flag_damping_as_friction = true
-emission_shape_offset = Vector3(0, -25, 0)
-emission_shape = 3
-emission_box_extents = Vector3(15, 5, 1)
-angle_min = -180.0
-angle_max = 180.0
-direction = Vector3(0, -1, 0)
-spread = 0.0
-initial_velocity_min = 4.0
-initial_velocity_max = 15.0
-gravity = Vector3(0, -10, 0)
-attractor_interaction_enabled = false
-turbulence_enabled = true
-turbulence_noise_strength = 0.5
-turbulence_noise_scale = 1.0
-
-[sub_resource type="Gradient" id="Gradient_d2ygt"]
-offsets = PackedFloat32Array(0, 0.11039, 0.649351)
-colors = PackedColorArray(0.0728426, 0.0728426, 0.0728426, 1, 0.188235, 0.188235, 0.188235, 0.168627, 0.254902, 0.254902, 0.254902, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6bf8s"]
-gradient = SubResource("Gradient_d2ygt")
-width = 8
-height = 8
-fill = 2
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_n2tg7"]
-radius = 55.0091
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8liow"]
-size = Vector2(39.5, 731)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfmeo"]
-size = Vector2(1152.5, 41)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ilib"]
-size = Vector2(29, 60)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nxbl3"]
-closed = false
-polygon = PackedVector2Array(-14, 43, -14, -14, 12, -14, 12, 43)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ydnmr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_xm82w")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[node name="Root" type="Node"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(370, 742)
-scale = Vector2(3, 3)
-texture = ExtResource("2_6v8kg")
-
-[node name="Scene_Root" type="Node2D" parent="."]
+[node name="Scene_Root" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_8nsuj")
 
-[node name="Brazier_00" type="StaticBody2D" parent="Scene_Root"]
-position = Vector2(314, 321)
-collision_layer = 2
-collision_mask = 0
+[node name="Player" parent="." instance=ExtResource("2_j2720")]
+position = Vector2(-4, -73)
+scale = Vector2(0.3, 0.3)
 
-[node name="Sprite_Stack" type="AnimatedSprite2D" parent="Scene_Root/Brazier_00"]
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_1bxuc")
-animation = &"unlit"
-script = ExtResource("11_v043c")
-metadata/_edit_lock_ = true
-
-[node name="Bounding_Box" type="CollisionShape2D" parent="Scene_Root/Brazier_00"]
-position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_g1uo4")
-metadata/_edit_lock_ = true
-
-[node name="Light" type="PointLight2D" parent="Scene_Root/Brazier_00"]
-scale = Vector2(5, 5)
-enabled = false
-color = Color(0.894118, 0.14902, 0, 0.117647)
-energy = 7.0
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 1)
-texture = SubResource("GradientTexture2D_02l1g")
-texture_scale = 7.71
-script = ExtResource("5_rrma4")
-metadata/_edit_lock_ = true
-
-[node name="Smoke" type="GPUParticles2D" parent="Scene_Root/Brazier_00"]
-emitting = false
-amount = 6
-amount_ratio = 0.8
-process_material = SubResource("ParticleProcessMaterial_4vxig")
-texture = SubResource("GradientTexture2D_6bf8s")
-lifetime = 3.0
-randomness = 0.8
-script = ExtResource("11_bkpif")
-metadata/_edit_lock_ = true
-
-[node name="Trigger" type="Area2D" parent="Scene_Root/Brazier_00"]
-visible = false
-collision_layer = 0
-
-[node name="Bounding_Box" type="CollisionShape2D" parent="Scene_Root/Brazier_00/Trigger"]
-shape = SubResource("CircleShape2D_n2tg7")
-metadata/_edit_lock_ = true
-
-[node name="Scene_Walls" type="StaticBody2D" parent="Scene_Root"]
-position = Vector2(-13, 324)
-collision_layer = 2
-collision_mask = 0
-metadata/_edit_lock_ = true
-
-[node name="Left_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
-position = Vector2(-7, 0.5)
-shape = SubResource("RectangleShape2D_8liow")
-metadata/_edit_lock_ = true
-
-[node name="Right_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
-position = Vector2(1185, 0)
-shape = SubResource("RectangleShape2D_8liow")
-metadata/_edit_lock_ = true
-
-[node name="Bottom_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
-position = Vector2(589, 345)
-shape = SubResource("RectangleShape2D_lfmeo")
-metadata/_edit_lock_ = true
-
-[node name="Top_Wall" type="CollisionShape2D" parent="Scene_Root/Scene_Walls"]
-position = Vector2(589, -345)
-shape = SubResource("RectangleShape2D_lfmeo")
-metadata/_edit_lock_ = true
-
-[node name="Player" type="CharacterBody2D" parent="Scene_Root"]
-position = Vector2(429, 380)
-collision_mask = 2
-script = ExtResource("5_0yvrj")
-throwable = ExtResource("3_0pd6w")
-
-[node name="Camera" type="Camera2D" parent="Scene_Root/Player"]
-process_callback = 0
-metadata/_edit_lock_ = true
-
-[node name="Bounding_Box" type="CollisionShape2D" parent="Scene_Root/Player"]
-position = Vector2(-1.5, 15)
-shape = SubResource("RectangleShape2D_4ilib")
-debug_color = Color(0, 0.579059, 0.807016, 0.42)
-metadata/_edit_lock_ = true
-
-[node name="Occluder" type="LightOccluder2D" parent="Scene_Root/Player"]
-occluder = SubResource("OccluderPolygon2D_nxbl3")
-metadata/_edit_lock_ = true
-
-[node name="Sprite_Stack" type="AnimatedSprite2D" parent="Scene_Root/Player"]
-sprite_frames = SubResource("SpriteFrames_ydnmr")
-animation = &"idle"
-metadata/_edit_lock_ = true
-
-[node name="Rooms" type="Node" parent="Scene_Root"]
+[node name="Rooms" type="Node2D" parent="."]
 script = ExtResource("17_3om0c")
+metadata/_edit_lock_ = true
 
-[node name="Room_00" type="Node" parent="Scene_Root/Rooms"]
-script = ExtResource("18_do8uh")
+[node name="Feast_Room" parent="Rooms" instance=ExtResource("3_tt2cw")]
+script = ExtResource("5_xbb58")
+metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="Scene_Root/Brazier_00/Trigger" to="Scene_Root/Brazier_00/Sprite_Stack" method="_on_brazie_entered"]
-[connection signal="body_entered" from="Scene_Root/Brazier_00/Trigger" to="Scene_Root/Brazier_00/Light" method="_on_brazier_entered"]
-[connection signal="body_entered" from="Scene_Root/Brazier_00/Trigger" to="Scene_Root/Brazier_00/Smoke" method="_on_brazier_entered"]
-[connection signal="death" from="Scene_Root/Player" to="Scene_Root" method="_on_player_death"]
+[connection signal="death" from="Player" to="." method="_on_player_death"]

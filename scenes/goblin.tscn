@@ -38,7 +38,7 @@ visible = false
 collision_layer = 0
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Area"]
+[node name="Bounding_Box" type="CollisionShape2D" parent="Attack_Area"]
 shape = SubResource("CircleShape2D_b3q3r")
 metadata/_edit_lock_ = true
 

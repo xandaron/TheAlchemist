@@ -10,4 +10,4 @@ const BASE_ATTACK_DELAY := 0.5
 var attack_cooldown := BASE_ATTACK_DELAY
 
 const BASE_DAMAGE := 10.0
-var damage := 100.0
+var damage := BASE_DAMAGE

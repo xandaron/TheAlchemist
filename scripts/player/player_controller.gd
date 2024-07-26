@@ -6,7 +6,7 @@ signal death
 
 func attack():
 	var potion := throwable.instantiate()
-	potion.initalize(position, get_local_mouse_position().normalized(), 50.0, 500.0, 1.0)
+	potion.initalize(position, get_local_mouse_position().normalized(), 50.0, 100.0, 1.0)
 	potion.hit_targets.connect($"../Rooms"._on_hit_targets)
 	get_parent().add_child(potion)
 	PlayerVariables.cooldown_timer = PlayerVariables.cooldown
@@ -20,7 +20,7 @@ func _input(event):
 		attack()
 
 func _physics_process(delta):
-	if GlobalVariables.pause:
+	if GlobalVariables.paused:
 		return
 	if PlayerVariables.cooldown_timer > 0.0:
 		PlayerVariables.cooldown_timer -= delta
@@ -42,12 +42,12 @@ func _physics_process(delta):
 		collision_info = move_and_collide(Vector2(normal.y, -normal.x) * \
 			collision_info.get_remainder().length() * \
 			direction.cross(normal))
-	PlayerVariables.position = position
+	PlayerVariables.position = global_position
 
 func _on_attack_player(damage: float):
 	if PlayerVariables.immunity_timer <= 0.0:
 		PlayerVariables.immunity_timer = PlayerVariables.immunity_time
 		PlayerVariables.health -= damage
-		print("Ouch! Damage: ", damage, " HP: ", PlayerVariables.health)
+		print("Damage: ", damage, " HP: ", PlayerVariables.health)
 		if PlayerVariables.health <= 0:
 			death.emit()

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1u8raovvh4po"]
+
+[ext_resource type="Texture2D" uid="uid://ds87uwdegt3yf" path="res://assets/textures/room_assets/pillar.png" id="1_tadre"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v6fx1"]
+cull_mode = 2
+polygon = PackedVector2Array(5, 0, 5, -1, 4, -1, -4, -1, -5, -1, -5, 0, -8, 0, -8, 5, -5, 5, -5, 6, -3, 6, -3, 7, -2, 7, -2, 8, 2, 8, 2, 7, 3, 7, 3, 6, 5, 6, 5, 5, 8, 5, 8, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yfmni"]
+radius = 5.0
+height = 16.0
+
+[node name="Pillar" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_tadre")
+metadata/_edit_lock_ = true
+
+[node name="Occluder" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_v6fx1")
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yfmni")

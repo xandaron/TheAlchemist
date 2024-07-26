@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq7qoy1xkv0v3"]
+
+[ext_resource type="Texture2D" uid="uid://xwj0k63f5wb4" path="res://assets/textures/corridor.png" id="1_j5b5i"]
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_tmpqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcg23"]
+size = Vector2(6, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne6wy"]
+size = Vector2(6, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ty8s"]
+size = Vector2(44, 96)
+
+[node name="Corridor" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_tmpqx")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(3, 3)
+texture = ExtResource("1_j5b5i")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Left_Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-19.5, 0)
+shape = SubResource("RectangleShape2D_wcg23")
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(19.5, 0)
+shape = SubResource("RectangleShape2D_ne6wy")
+metadata/_edit_lock_ = true
+
+[node name="Area" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_2ty8s")
+
+[connection signal="body_entered" from="Area" to="." method="_on_room_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_room_exited"]

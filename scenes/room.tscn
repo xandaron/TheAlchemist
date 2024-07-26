@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0ew5u3io33q3"]
+
+[ext_resource type="Script" path="res://scripts/room.gd" id="1_amtcs"]
+[ext_resource type="PackedScene" uid="uid://ce7mxnrc34o8b" path="res://scenes/brazier.tscn" id="3_x4cu0"]
+[ext_resource type="Texture2D" uid="uid://cxlj7xtx0hiy5" path="res://assets/textures/room.png" id="11_u6rx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6qdj"]
+size = Vector2(174, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ggb8"]
+size = Vector2(177, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvroh"]
+size = Vector2(12, 360)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd6eg"]
+size = Vector2(12, 360)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_15ury"]
+size = Vector2(384, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_reati"]
+size = Vector2(360, 378)
+
+[node name="Room" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_amtcs")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Top_Left_Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-105, -183)
+shape = SubResource("RectangleShape2D_r6qdj")
+
+[node name="Top_Right_Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(103.5, -183)
+shape = SubResource("RectangleShape2D_8ggb8")
+
+[node name="Right_Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(186, 6)
+shape = SubResource("RectangleShape2D_kvroh")
+
+[node name="Left_Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-186, 6)
+shape = SubResource("RectangleShape2D_fd6eg")
+
+[node name="Bottom_Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 189)
+shape = SubResource("RectangleShape2D_15ury")
+
+[node name="Room_Area" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Room_Area"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_reati")
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(3, 3)
+texture = ExtResource("11_u6rx6")
+metadata/_edit_lock_ = true
+
+[node name="Brazier" parent="." instance=ExtResource("3_x4cu0")]
+
+[connection signal="body_entered" from="Room_Area" to="." method="_on_room_entered"]
+[connection signal="body_exited" from="Room_Area" to="." method="_on_room_exited"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://1kwl3e8dkoi4"]
+
+[ext_resource type="Texture2D" uid="uid://bsg78prouiucl" path="res://assets/textures/room_assets/floor_8x12.png" id="1_18ait"]
+[ext_resource type="PackedScene" uid="uid://cgmky65kbxtgu" path="res://scenes/carpet 3x3.tscn" id="2_8dwnp"]
+[ext_resource type="PackedScene" uid="uid://5jwib8f08mqj" path="res://scenes/corner_pillar.tscn" id="4_bgmuq"]
+[ext_resource type="PackedScene" uid="uid://78362172umor" path="res://scenes/fliped_corner_pillar.tscn" id="4_jt30a"]
+[ext_resource type="PackedScene" uid="uid://dpa6glh67tsej" path="res://scenes/3_double_walls.tscn" id="5_1q3qw"]
+
+[node name="Feast_Room" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Floor" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_18ait")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_00" parent="." instance=ExtResource("2_8dwnp")]
+position = Vector2(0, -72)
+
+[node name="Carpet_01" parent="." instance=ExtResource("2_8dwnp")]
+position = Vector2(0, 72)
+
+[node name="Corner_Pillar_00" parent="." instance=ExtResource("4_bgmuq")]
+position = Vector2(120, -72)
+
+[node name="Corner_Pillar_01" parent="." instance=ExtResource("4_bgmuq")]
+position = Vector2(-120, -72)
+scale = Vector2(-1, 1)
+
+[node name="Corner_Pillar_02" parent="." instance=ExtResource("4_jt30a")]
+position = Vector2(120, 72)
+
+[node name="Corner_Pillar_03" parent="." instance=ExtResource("4_jt30a")]
+position = Vector2(-120, 72)
+scale = Vector2(-1, 1)
+
+[node name="3_Double_Walls_Top" parent="." instance=ExtResource("5_1q3qw")]
+z_index = -1
+position = Vector2(0, -128)
+
+[node name="3_Double_Walls_Bottom" parent="." instance=ExtResource("5_1q3qw")]
+position = Vector2(0, 128)

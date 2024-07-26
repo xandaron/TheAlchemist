@@ -6,11 +6,12 @@ func _ready():
 	speed = GoblinVariables.speed
 	attack_damage = GoblinVariables.damage
 	death.connect($".."._on_mob_death)
+	global_rotation = 0
 
 func _physics_process(delta):
-	if GlobalVariables.pause:
+	if GlobalVariables.paused or not active:
 		return
-	var distanceFromPlayer = PlayerVariables.position - position
+	var distanceFromPlayer = PlayerVariables.position - global_position
 	if distanceFromPlayer.length() > 100.0:
 		var direction = distanceFromPlayer.normalized()
 		var collision_info = move_and_collide(direction * GoblinVariables.speed * delta)

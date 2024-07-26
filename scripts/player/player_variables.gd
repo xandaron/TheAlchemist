@@ -5,7 +5,7 @@ var position := Vector2(0.0, 0.0)
 const BASE_HEALTH := 100.0
 var health := BASE_HEALTH
 
-const BASE_SPEED := 300.0
+const BASE_SPEED := 100.0
 var speed := BASE_SPEED
 
 const BASE_COOLDOWN := 0.5
