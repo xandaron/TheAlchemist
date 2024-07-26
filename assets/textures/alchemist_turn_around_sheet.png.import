@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv4qppu42dt41"
-path="res://.godot/imported/green.jpg-3b97d63a69acd7adfba8c47980a72234.ctex"
+uid="uid://detob2rloxb03"
+path="res://.godot/imported/alchemist_turn_around_sheet.png-72cff974735d824af4f4dcd9b4e25850.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/green.jpg"
-dest_files=["res://.godot/imported/green.jpg-3b97d63a69acd7adfba8c47980a72234.ctex"]
+source_file="res://assets/textures/alchemist_turn_around_sheet.png"
+dest_files=["res://.godot/imported/alchemist_turn_around_sheet.png-72cff974735d824af4f4dcd9b4e25850.ctex"]
 
 [params]
 
