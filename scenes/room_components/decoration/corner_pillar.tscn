@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://5jwib8f08mqj"]
+
+[ext_resource type="PackedScene" uid="uid://c28ajwxxwign1" path="res://scenes/room_components/walls/horizontal_wall_2.tscn" id="1_lfmjl"]
+[ext_resource type="Texture2D" uid="uid://b6knw7ilom4ri" path="res://assets/textures/room_assets/walls/corner.png" id="2_qiq85"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/double_sided_topper.gd" id="3_7s0cw"]
+[ext_resource type="Texture2D" uid="uid://dcfispp74dqoe" path="res://assets/textures/room_assets/wall_toppers/double_sided/double_sided_04.png" id="3_ek6eb"]
+[ext_resource type="Texture2D" uid="uid://baybe8qaeeofu" path="res://assets/textures/room_assets/wall_toppers/corner/corner_00.png" id="4_xq7uq"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/corner_topper.gd" id="5_a0gnd"]
+[ext_resource type="PackedScene" uid="uid://c1u8raovvh4po" path="res://scenes/room_components/decoration/pillar.tscn" id="5_gue2v"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v45pi"]
+polygon = PackedVector2Array(22, 16, 16, 16, 16, -20, 22, -20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qosbr"]
+size = Vector2(6.5, 36)
+
+[node name="Corner_Pillar" type="Node2D"]
+y_sort_enabled = true
+
+[node name="2xWall" parent="." instance=ExtResource("1_lfmjl")]
+position = Vector2(0, -16)
+metadata/_edit_lock_ = true
+
+[node name="Toppers" type="Node2D" parent="."]
+position = Vector2(19, 16)
+
+[node name="Topper_00" type="Sprite2D" parent="Toppers"]
+position = Vector2(0, -48)
+rotation = -1.5708
+texture = ExtResource("3_ek6eb")
+script = ExtResource("3_7s0cw")
+
+[node name="Topper_01" type="Sprite2D" parent="Toppers"]
+position = Vector2(0, -26.5)
+texture = ExtResource("4_xq7uq")
+script = ExtResource("5_a0gnd")
+
+[node name="Wall_Side_00" type="Sprite2D" parent="."]
+position = Vector2(19, 3)
+texture = ExtResource("2_qiq85")
+metadata/_edit_lock_ = true
+
+[node name="Pillar" parent="." instance=ExtResource("5_gue2v")]
+position = Vector2(-8, 8)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, -1)
+occluder = SubResource("OccluderPolygon2D_v45pi")
+metadata/_edit_lock_ = true
+
+[node name="Side_Wall" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Side_Wall"]
+position = Vector2(19, -2)
+shape = SubResource("RectangleShape2D_qosbr")
+metadata/_edit_lock_ = true

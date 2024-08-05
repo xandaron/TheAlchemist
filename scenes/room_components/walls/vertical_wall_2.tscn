@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://6np6sbpo2kte"]
+
+[ext_resource type="Texture2D" uid="uid://bvpm0ysup2nar" path="res://assets/textures/room_assets/wall_toppers/single/single_02.png" id="1_xs4hn"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/single_topper.gd" id="2_wai8d"]
+[ext_resource type="Texture2D" uid="uid://cft6ydaqmnwt5" path="res://assets/textures/room_assets/wall_toppers/short_single/short_single_00.png" id="3_7c1ae"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/short_single_topper.gd" id="4_8skvx"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o0v1v"]
+polygon = PackedVector2Array(-3, -24, 3, -24, 3, 24, -3, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl2xy"]
+size = Vector2(6, 48)
+
+[node name="Vertical_Double_Wall" type="Node2D"]
+
+[node name="Sprite_00" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+rotation = 4.71239
+texture = ExtResource("1_xs4hn")
+script = ExtResource("2_wai8d")
+
+[node name="Sprite_01" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+rotation = 4.71239
+texture = ExtResource("3_7c1ae")
+script = ExtResource("4_8skvx")
+
+[node name="Occluder" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_o0v1v")
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_wl2xy")

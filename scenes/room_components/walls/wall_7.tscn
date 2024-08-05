@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://buk7po4dani7t"]
+
+[ext_resource type="Texture2D" uid="uid://cm58mutdym71m" path="res://assets/textures/room_assets/walls/brick.png" id="1_f2pdv"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/wall.gd" id="2_gsube"]
+[ext_resource type="Texture2D" uid="uid://cajt1yf0lc4hb" path="res://assets/textures/room_assets/wall_toppers/double/double_00.png" id="3_2yre4"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/double_topper.gd" id="4_w502j"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/short_double_topper.gd" id="5_1p61x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ddr3o"]
+load_path = "res://.godot/imported/single_double_00.png-0dec55bb717bc2101600c75c4665a92a.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxwae"]
+size = Vector2(112, 4)
+
+[node name="Wall_7" type="Node2D"]
+
+[node name="Wall_00" type="Sprite2D" parent="."]
+position = Vector2(-48, -16)
+texture = ExtResource("1_f2pdv")
+script = ExtResource("2_gsube")
+
+[node name="Wall_01" type="Sprite2D" parent="."]
+position = Vector2(-16, -16)
+texture = ExtResource("1_f2pdv")
+script = ExtResource("2_gsube")
+
+[node name="Wall_02" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_f2pdv")
+script = ExtResource("2_gsube")
+
+[node name="Wall_03" type="Sprite2D" parent="."]
+position = Vector2(-32, -16)
+texture = ExtResource("1_f2pdv")
+script = ExtResource("2_gsube")
+
+[node name="Wall_04" type="Sprite2D" parent="."]
+position = Vector2(48, -16)
+texture = ExtResource("1_f2pdv")
+script = ExtResource("2_gsube")
+
+[node name="Wall_05" type="Sprite2D" parent="."]
+position = Vector2(32, -16)
+texture = ExtResource("1_f2pdv")
+script = ExtResource("2_gsube")
+
+[node name="Wall_06" type="Sprite2D" parent="."]
+position = Vector2(16, -16)
+texture = ExtResource("1_f2pdv")
+script = ExtResource("2_gsube")
+
+[node name="Top_00" type="Sprite2D" parent="."]
+position = Vector2(40, -26.5)
+texture = ExtResource("3_2yre4")
+script = ExtResource("4_w502j")
+
+[node name="Top_01" type="Sprite2D" parent="."]
+position = Vector2(8, -26.5)
+texture = ExtResource("3_2yre4")
+script = ExtResource("4_w502j")
+
+[node name="Top_02" type="Sprite2D" parent="."]
+position = Vector2(-24, -26.5)
+texture = ExtResource("3_2yre4")
+script = ExtResource("4_w502j")
+
+[node name="Short_Top_00" type="Sprite2D" parent="."]
+position = Vector2(-48, -26.5)
+texture = SubResource("CompressedTexture2D_ddr3o")
+script = ExtResource("5_1p61x")
+
+[node name="Body" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(0, -2)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_dxwae")

@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://x80425ym6dq0"]
+
+[ext_resource type="Texture2D" uid="uid://drqqwj6a8b7sx" path="res://assets/textures/room_assets/floors/wood_corridor_straight.png" id="2_2n5dn"]
+[ext_resource type="PackedScene" uid="uid://bxlcuw7r34qld" path="res://scenes/room_components/walls/straight_vertical_corridor_wall.tscn" id="3_q4yt3"]
+[ext_resource type="PackedScene" uid="uid://bl4i3p0v4bvum" path="res://scenes/room_components/lights/light_with_trigger.tscn" id="4_2257f"]
+
+[node name="Wood_Vertical_Corridor" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Floor" type="Sprite2D" parent="."]
+z_index = -1
+rotation = 1.5708
+texture = ExtResource("2_2n5dn")
+metadata/_edit_lock_ = true
+
+[node name="Left_Wall" parent="." instance=ExtResource("3_q4yt3")]
+position = Vector2(-32, 0)
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" parent="." instance=ExtResource("3_q4yt3")]
+position = Vector2(32, 0)
+scale = Vector2(-1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Light_With_Trigger" parent="." instance=ExtResource("4_2257f")]
+rotation = 1.5708
+metadata/_edit_lock_ = true
+
+[node name="Light_Trigger" parent="Light_With_Trigger" index="0"]
+position = Vector2(115, 0)
+
+[node name="Left" parent="Light_With_Trigger/Light_Trigger" index="0"]
+position = Vector2(-118, 0.000425251)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_00" parent="Light_With_Trigger" index="1"]
+position = Vector2(-120, -20)
+rotation = 4.71239
+
+[node name="Candelabra_01" parent="Light_With_Trigger" index="2"]
+position = Vector2(120, 20)
+rotation = 4.71239
+
+[node name="Candelabra_02" parent="Light_With_Trigger" index="3"]
+position = Vector2(120, -20)
+rotation = 4.71239
+
+[node name="Candelabra_03" parent="Light_With_Trigger" index="4"]
+position = Vector2(-120, 20)
+rotation = 4.71239
+
+[editable path="Light_With_Trigger"]
+[editable path="Light_With_Trigger/Candelabra_00"]
+[editable path="Light_With_Trigger/Candelabra_01"]
+[editable path="Light_With_Trigger/Candelabra_02"]
+[editable path="Light_With_Trigger/Candelabra_03"]

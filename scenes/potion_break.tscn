@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bknf6vi83o11a"]
+
+[ext_resource type="Script" path="res://scripts/potion_break.gd" id="1_56ttp"]
+[ext_resource type="AudioStream" uid="uid://cmgbnpdyx3xoq" path="res://assets/audio/glass_breaking_8bit.mp3" id="1_emowc"]
+
+[node name="Potion_Break" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_emowc")
+autoplay = true
+script = ExtResource("1_56ttp")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

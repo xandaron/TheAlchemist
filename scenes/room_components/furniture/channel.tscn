@@ -1,0 +1,591 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4rnmwo8ehve2"]
+
+[ext_resource type="Texture2D" uid="uid://dcss6b6udqxv0" path="res://assets/textures/room_assets/lights/fire_room_channel.png" id="1_6i0w6"]
+[ext_resource type="Script" path="res://scripts/channel.gd" id="2_5diao"]
+[ext_resource type="SpriteFrames" uid="uid://dvua71dtls128" path="res://scenes/room_components/furniture/channel.tres" id="3_kb1pb"]
+[ext_resource type="Texture2D" uid="uid://8adpkfjcluj3" path="res://light_texture.tres" id="4_cjkd4"]
+
+[node name="Channel" type="Sprite2D"]
+clip_children = 2
+position = Vector2(0, -10)
+texture = ExtResource("1_6i0w6")
+script = ExtResource("2_5diao")
+
+[node name="Fire_0" type="AnimatedSprite2D" parent="."]
+position = Vector2(105, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_0"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_1" type="AnimatedSprite2D" parent="."]
+position = Vector2(121, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_2" type="AnimatedSprite2D" parent="."]
+position = Vector2(137, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_3" type="AnimatedSprite2D" parent="."]
+position = Vector2(153, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_4" type="AnimatedSprite2D" parent="."]
+position = Vector2(169, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_4"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_5" type="AnimatedSprite2D" parent="."]
+position = Vector2(185, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_6" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -118)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_7" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -102)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_8" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -87)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_8"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_9" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -71)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_10" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -55)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_11" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -39)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_12" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -24)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_12"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_13" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, -8)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_14" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 8)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_15" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 24)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_16" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 39)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_16"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_17" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 55)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_18" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 71)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_19" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 87)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_20" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 102)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_20"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_21" type="AnimatedSprite2D" parent="."]
+position = Vector2(190.5, 118)
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_22" type="AnimatedSprite2D" parent="."]
+position = Vector2(184, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_23" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_24" type="AnimatedSprite2D" parent="."]
+position = Vector2(152, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_24"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_25" type="AnimatedSprite2D" parent="."]
+position = Vector2(136, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_26" type="AnimatedSprite2D" parent="."]
+position = Vector2(120, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_27" type="AnimatedSprite2D" parent="."]
+position = Vector2(104, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_28" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_28"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_29" type="AnimatedSprite2D" parent="."]
+position = Vector2(72, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_30" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_31" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_32" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_32"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_33" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_34" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_35" type="AnimatedSprite2D" parent="."]
+position = Vector2(-24, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_36" type="AnimatedSprite2D" parent="."]
+position = Vector2(-40, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_36"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_37" type="AnimatedSprite2D" parent="."]
+position = Vector2(-56, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_38" type="AnimatedSprite2D" parent="."]
+position = Vector2(-72, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_39" type="AnimatedSprite2D" parent="."]
+position = Vector2(-88, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_40" type="AnimatedSprite2D" parent="."]
+position = Vector2(-104, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_40"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_41" type="AnimatedSprite2D" parent="."]
+position = Vector2(-120, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_42" type="AnimatedSprite2D" parent="."]
+position = Vector2(-136, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_43" type="AnimatedSprite2D" parent="."]
+position = Vector2(-152, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_44" type="AnimatedSprite2D" parent="."]
+position = Vector2(-168, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_44"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_45" type="AnimatedSprite2D" parent="."]
+position = Vector2(-184, 126.5)
+rotation = 1.5708
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_46" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 118)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_47" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 102)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_48" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 86)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_48"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_49" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 70)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_50" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 54)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_51" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 38)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_52" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 22)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_52"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_53" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, 6)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_54" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -10)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_55" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -26)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_56" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -42)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_56"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_57" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -58)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_58" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -74)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_59" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -90)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_60" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -106)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_60"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_61" type="AnimatedSprite2D" parent="."]
+position = Vector2(-190.5, -122)
+rotation = 3.14159
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_62" type="AnimatedSprite2D" parent="."]
+position = Vector2(-182, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_63" type="AnimatedSprite2D" parent="."]
+position = Vector2(-166, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_64" type="AnimatedSprite2D" parent="."]
+position = Vector2(-150, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Light" type="PointLight2D" parent="Fire_64"]
+enabled = false
+color = Color(0.954706, 0.258379, 0.183187, 1)
+texture = ExtResource("4_cjkd4")
+texture_scale = 8.0
+metadata/_edit_lock_ = true
+
+[node name="Fire_65" type="AnimatedSprite2D" parent="."]
+position = Vector2(-134, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_66" type="AnimatedSprite2D" parent="."]
+position = Vector2(-118, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691
+
+[node name="Fire_67" type="AnimatedSprite2D" parent="."]
+position = Vector2(-102, -126.5)
+rotation = 4.71239
+sprite_frames = ExtResource("3_kb1pb")
+autoplay = "default"
+frame_progress = 0.797691

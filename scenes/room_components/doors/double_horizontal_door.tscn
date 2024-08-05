@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq0cuotgwotyk"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/horizontal_door.gd" id="1_uhhmf"]
+[ext_resource type="Texture2D" uid="uid://cod630rarv040" path="res://assets/textures/room_assets/doors/double_horizontal_closed.png" id="2_7ncrc"]
+[ext_resource type="Texture2D" uid="uid://diu7nshbk3e1v" path="res://assets/textures/room_assets/doors/double_horizontal_open.png" id="3_o5l3n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xtxvh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ncrc")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o5l3n")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohllr"]
+size = Vector2(40, 4)
+
+[node name="Double_Door" type="Node2D"]
+script = ExtResource("1_uhhmf")
+
+[node name="Open_Door" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -19)
+sprite_frames = SubResource("SpriteFrames_xtxvh")
+animation = &"open"
+metadata/_edit_lock_ = true
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ohllr")
+metadata/_edit_lock_ = true

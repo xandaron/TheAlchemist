@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c28ajwxxwign1"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/sprite_fade.gd" id="1_t44hq"]
+[ext_resource type="Texture2D" uid="uid://cm58mutdym71m" path="res://assets/textures/room_assets/walls/brick.png" id="2_jtd62"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/wall.gd" id="3_0b4h0"]
+[ext_resource type="Texture2D" uid="uid://c263l5oh8r7xk" path="res://assets/textures/room_assets/wall_toppers/double/double_05.png" id="4_y5k2v"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/double_topper.gd" id="5_o05ti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qwim"]
+size = Vector2(32, 4)
+
+[node name="2xWall" type="Node2D"]
+script = ExtResource("1_t44hq")
+fade_distance = Vector2(24, 40)
+
+[node name="Wall_00" type="Sprite2D" parent="."]
+position = Vector2(8, -16)
+texture = ExtResource("2_jtd62")
+script = ExtResource("3_0b4h0")
+
+[node name="Wall_01" type="Sprite2D" parent="."]
+position = Vector2(-8, -16)
+texture = ExtResource("2_jtd62")
+script = ExtResource("3_0b4h0")
+
+[node name="Top_Topper" type="Sprite2D" parent="."]
+position = Vector2(0, -26.5)
+texture = ExtResource("4_y5k2v")
+script = ExtResource("5_o05ti")
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_0qwim")

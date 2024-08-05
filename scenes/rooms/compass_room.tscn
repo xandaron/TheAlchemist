@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://b844lhw1p53sq"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/compass_room.gd" id="1_gwmhr"]
+[ext_resource type="PackedScene" uid="uid://dgragmjm2tflw" path="res://scenes/room_components/walls/vertical_side_wall.tscn" id="3_3b2uj"]
+[ext_resource type="PackedScene" uid="uid://bb78q6myspi8e" path="res://scenes/room_components/compass.tscn" id="4_6tb3t"]
+[ext_resource type="PackedScene" uid="uid://d34ggcyw3hmrf" path="res://scenes/room_components/walls/short_horizontal_wall.tscn" id="4_r6gcl"]
+[ext_resource type="Texture2D" uid="uid://drqqwj6a8b7sx" path="res://assets/textures/room_assets/floors/wood_corridor_straight.png" id="5_8m0ts"]
+[ext_resource type="PackedScene" uid="uid://compap2wgaimn" path="res://scenes/room_components/lights/candelabra.tscn" id="6_o18uw"]
+
+[sub_resource type="Gradient" id="Gradient_we1gg"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c3lmo"]
+gradient = SubResource("Gradient_we1gg")
+fill = 1
+fill_from = Vector2(0.491453, 0.320513)
+fill_to = Vector2(0, 1)
+
+[node name="Compass_Room" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_gwmhr")
+
+[node name="Darkness" type="PointLight2D" parent="."]
+position = Vector2(0.999992, -16.5)
+scale = Vector2(3.15625, 4.64063)
+enabled = false
+blend_mode = 1
+texture = SubResource("GradientTexture2D_c3lmo")
+metadata/_edit_lock_ = true
+
+[node name="Left_Wall" parent="." instance=ExtResource("3_3b2uj")]
+position = Vector2(-96, 1)
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" parent="." instance=ExtResource("3_3b2uj")]
+position = Vector2(96, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Top_Wall" parent="." instance=ExtResource("4_r6gcl")]
+position = Vector2(0, -128)
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" parent="." instance=ExtResource("4_r6gcl")]
+y_sort_enabled = true
+position = Vector2(0, 128)
+metadata/_edit_lock_ = true
+
+[node name="Area2D" parent="Bottom_Wall" index="10"]
+scale = Vector2(1, -1)
+
+[node name="Compass" parent="." instance=ExtResource("4_6tb3t")]
+
+[node name="Candelabra_0" parent="." instance=ExtResource("6_o18uw")]
+position = Vector2(-84, -120)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_1" parent="." instance=ExtResource("6_o18uw")]
+position = Vector2(84, -120)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_2" parent="." instance=ExtResource("6_o18uw")]
+position = Vector2(84, 120)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_3" parent="." instance=ExtResource("6_o18uw")]
+position = Vector2(-84, 120)
+metadata/_edit_lock_ = true
+
+[node name="Floor1" type="Sprite2D" parent="."]
+z_index = -10
+rotation = 1.5708
+texture = ExtResource("5_8m0ts")
+metadata/_edit_lock_ = true
+
+[node name="Floor2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(64, 0)
+rotation = 1.5708
+texture = ExtResource("5_8m0ts")
+metadata/_edit_lock_ = true
+
+[node name="Floor3" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-64, 0)
+rotation = 1.5708
+texture = ExtResource("5_8m0ts")
+metadata/_edit_lock_ = true
+
+[connection signal="activate" from="." to="Left_Wall" method="_on_room_activate"]
+[connection signal="activate" from="." to="Right_Wall" method="_on_room_activate"]
+[connection signal="activate" from="." to="Top_Wall" method="_on_room_activate"]
+[connection signal="activate" from="." to="Bottom_Wall" method="_on_room_activate"]
+[connection signal="clear" from="." to="Left_Wall" method="_on_room_clear"]
+[connection signal="clear" from="." to="Right_Wall" method="_on_room_clear"]
+[connection signal="clear" from="." to="Top_Wall" method="_on_room_clear"]
+[connection signal="clear" from="." to="Bottom_Wall" method="_on_room_clear"]
+[connection signal="clear" from="." to="Candelabra_0" method="_turn_on"]
+[connection signal="clear" from="." to="Candelabra_1" method="_turn_on"]
+[connection signal="clear" from="." to="Candelabra_2" method="_turn_on"]
+[connection signal="clear" from="." to="Candelabra_3" method="_turn_on"]
+[connection signal="room_entered" from="Top_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Bottom_Wall" to="." method="_on_room_entered"]
+[connection signal="rotate" from="Compass" to="." method="_on_compass_rotate"]
+
+[editable path="Bottom_Wall"]

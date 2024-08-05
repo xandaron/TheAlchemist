@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds8nq3lfhgrpm"]
+
+[ext_resource type="AudioStream" uid="uid://dsdj4vvn5bi1n" path="res://assets/audio/slam_door_8bit.mp3" id="1_jp3vg"]
+[ext_resource type="Script" path="res://scripts/death_sound.gd" id="2_8jk21"]
+
+[node name="Door_Slam" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_jp3vg")
+autoplay = true
+script = ExtResource("2_8jk21")

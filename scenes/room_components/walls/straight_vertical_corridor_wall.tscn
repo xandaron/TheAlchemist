@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxlcuw7r34qld"]
+
+[ext_resource type="Texture2D" uid="uid://b785evvckcrhl" path="res://assets/textures/room_assets/wall_toppers/single/single_04.png" id="1_x2myr"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/single_topper.gd" id="2_toh0x"]
+[ext_resource type="Texture2D" uid="uid://bds88khin445i" path="res://assets/textures/room_assets/wall_toppers/single/single_06.png" id="3_if3ia"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hj0ch"]
+polygon = PackedVector2Array(0, 96, 6, 96, 6, -152, 0, -152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyflo"]
+size = Vector2(6, 276)
+
+[node name="Vertical_Wall" type="Node2D"]
+
+[node name="Topper_00" type="Sprite2D" parent="."]
+position = Vector2(3.00002, -16)
+rotation = 4.71239
+texture = ExtResource("1_x2myr")
+script = ExtResource("2_toh0x")
+
+[node name="Topper_01" type="Sprite2D" parent="."]
+position = Vector2(3.00002, -80)
+rotation = 4.71239
+texture = ExtResource("1_x2myr")
+script = ExtResource("2_toh0x")
+
+[node name="Topper_02" type="Sprite2D" parent="."]
+position = Vector2(3.00002, -48)
+rotation = 4.71239
+texture = ExtResource("1_x2myr")
+script = ExtResource("2_toh0x")
+
+[node name="Topper_03" type="Sprite2D" parent="."]
+position = Vector2(3.00002, 80)
+rotation = 4.71239
+texture = ExtResource("1_x2myr")
+script = ExtResource("2_toh0x")
+
+[node name="Topper_04" type="Sprite2D" parent="."]
+position = Vector2(3.00002, 48)
+rotation = 4.71239
+texture = ExtResource("1_x2myr")
+script = ExtResource("2_toh0x")
+
+[node name="Topper_05" type="Sprite2D" parent="."]
+position = Vector2(3.00002, 16)
+rotation = 4.71239
+texture = ExtResource("1_x2myr")
+script = ExtResource("2_toh0x")
+
+[node name="Topper_06" type="Sprite2D" parent="."]
+position = Vector2(3.00002, -112)
+rotation = 4.71239
+texture = ExtResource("1_x2myr")
+script = ExtResource("2_toh0x")
+
+[node name="Topper_07" type="Sprite2D" parent="."]
+position = Vector2(3.00002, -144)
+rotation = 4.71239
+texture = ExtResource("3_if3ia")
+script = ExtResource("2_toh0x")
+
+[node name="Occluder" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_hj0ch")
+
+[node name="Body" type="StaticBody2D" parent="."]
+position = Vector2(3.00002, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(-1.54972e-05, -14)
+shape = SubResource("RectangleShape2D_qyflo")

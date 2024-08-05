@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://compap2wgaimn"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/candelabra.gd" id="1_jvkl7"]
+[ext_resource type="Texture2D" uid="uid://dkd2p65wanwn" path="res://assets/textures/room_assets/lights/candelabra_unlit.png" id="1_l5psv"]
+[ext_resource type="Texture2D" uid="uid://8adpkfjcluj3" path="res://light_texture.tres" id="2_2nxad"]
+
+[node name="Candelabra" type="Node2D"]
+script = ExtResource("1_jvkl7")
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(0, -27)
+color = Color(0.969707, 0.496024, 0.333462, 1)
+shadow_enabled = true
+texture = ExtResource("2_2nxad")
+texture_scale = 15.46
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -14)
+texture = ExtResource("1_l5psv")
+metadata/_edit_lock_ = true

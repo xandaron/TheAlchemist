@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpa6glh67tsej"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/long_scene_wall.gd" id="1_qojj3"]
+[ext_resource type="PackedScene" uid="uid://bal0iey82udli" path="res://scenes/room_components/walls/wall_3.tscn" id="2_bg0vj"]
+[ext_resource type="PackedScene" uid="uid://buk7po4dani7t" path="res://scenes/room_components/walls/wall_7.tscn" id="3_0kept"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63o2s"]
+size = Vector2(5.5, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_042b7"]
+size = Vector2(191.875, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o6ib"]
+size = Vector2(7, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1l0d"]
+size = Vector2(16, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jslf7"]
+size = Vector2(16, 24)
+
+[node name="Long_Wall" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_qojj3")
+fade_distance = Vector2(200, 32)
+
+[node name="Wall_3_00" parent="." instance=ExtResource("2_bg0vj")]
+z_index = 0
+position = Vector2(40, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_3_01" parent="." instance=ExtResource("2_bg0vj")]
+z_index = 0
+position = Vector2(-40, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_7_00" parent="." instance=ExtResource("3_0kept")]
+position = Vector2(136, 0)
+
+[node name="Wall_7_01" parent="." instance=ExtResource("3_0kept")]
+position = Vector2(-136, 0)
+
+[node name="Enter" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="Bounding_Box_05" type="CollisionShape2D" parent="Enter"]
+position = Vector2(-93.25, 12)
+shape = SubResource("RectangleShape2D_63o2s")
+
+[node name="Bounding_Box_06" type="CollisionShape2D" parent="Enter"]
+position = Vector2(0.0625, 26.5)
+shape = SubResource("RectangleShape2D_042b7")
+
+[node name="Bounding_Box_07" type="CollisionShape2D" parent="Enter"]
+position = Vector2(93, 12)
+shape = SubResource("RectangleShape2D_4o6ib")
+
+[node name="Bounding_Box_08" type="CollisionShape2D" parent="Enter"]
+position = Vector2(39.5, 12)
+shape = SubResource("RectangleShape2D_r1l0d")
+
+[node name="Bounding_Box_09" type="CollisionShape2D" parent="Enter"]
+position = Vector2(-40.5, 12)
+shape = SubResource("RectangleShape2D_jslf7")
+
+[connection signal="area_entered" from="Enter" to="." method="_on_room_entered"]

@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://1kdoa0vb61vd"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/alter_room.gd" id="1_ec6hi"]
+[ext_resource type="PackedScene" uid="uid://dpa6glh67tsej" path="res://scenes/room_components/walls/long_scene_wall.tscn" id="2_mf4eb"]
+[ext_resource type="PackedScene" uid="uid://dgragmjm2tflw" path="res://scenes/room_components/walls/vertical_side_wall.tscn" id="3_d6uah"]
+[ext_resource type="PackedScene" uid="uid://dkurae46aw155" path="res://scenes/room_components/furniture/alter.tscn" id="4_6a54r"]
+[ext_resource type="PackedScene" uid="uid://bc2i3ix4hi6in" path="res://scenes/room_components/furniture/stone_slab_with_statue.tscn" id="5_2j2a2"]
+[ext_resource type="PackedScene" uid="uid://cmv0t73y2iyww" path="res://scenes/room_components/lights/brazier.tscn" id="6_bi1rm"]
+[ext_resource type="Texture2D" uid="uid://c8a1ta68ybp0b" path="res://assets/textures/room_assets/decoration/alter_platform.png" id="7_uwoy5"]
+[ext_resource type="Texture2D" uid="uid://cb6of618mwsuw" path="res://assets/textures/room_assets/floors/brick_8x12.png" id="8_wjapv"]
+
+[sub_resource type="Gradient" id="Gradient_xyspf"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_88mef"]
+gradient = SubResource("Gradient_xyspf")
+fill = 1
+fill_from = Vector2(0.491453, 0.320513)
+fill_to = Vector2(0, 1)
+
+[node name="Alter_Room" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_ec6hi")
+metadata/_edit_lock_ = true
+
+[node name="Darkness" type="PointLight2D" parent="."]
+position = Vector2(-1.50204e-05, -16.5)
+scale = Vector2(6.125, 4.64063)
+enabled = false
+blend_mode = 1
+texture = SubResource("GradientTexture2D_88mef")
+metadata/_edit_lock_ = true
+
+[node name="Top_Wall" parent="." instance=ExtResource("2_mf4eb")]
+position = Vector2(0, -128)
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" parent="." instance=ExtResource("2_mf4eb")]
+position = Vector2(0, 128)
+metadata/_edit_lock_ = true
+
+[node name="Enter" parent="Bottom_Wall" index="4"]
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_05" parent="Bottom_Wall/Enter" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_06" parent="Bottom_Wall/Enter" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_07" parent="Bottom_Wall/Enter" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_08" parent="Bottom_Wall/Enter" index="3"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_09" parent="Bottom_Wall/Enter" index="4"]
+metadata/_edit_lock_ = true
+
+[node name="Left_Wall" parent="." instance=ExtResource("3_d6uah")]
+position = Vector2(-192, 0)
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" parent="." instance=ExtResource("3_d6uah")]
+position = Vector2(192, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Alter" parent="." instance=ExtResource("4_6a54r")]
+position = Vector2(0, -118)
+metadata/_edit_lock_ = true
+
+[node name="Stone_Slab_With_Statue_00" parent="." instance=ExtResource("5_2j2a2")]
+position = Vector2(-100, 0)
+type = 1
+metadata/_edit_lock_ = true
+
+[node name="Stone_Slab_With_Statue_01" parent="." instance=ExtResource("5_2j2a2")]
+position = Vector2(100, 0)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_00" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(-25, -122)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_02" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(-26, -66)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_04" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(-180, -120)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_05" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(-180, 120)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_01" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(25, -122)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_03" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(24, -66)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_06" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(180, 120)
+metadata/_edit_lock_ = true
+
+[node name="Brazier_07" parent="." instance=ExtResource("6_bi1rm")]
+position = Vector2(180, -120)
+metadata/_edit_lock_ = true
+
+[node name="Alter_Platform" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -80)
+texture = ExtResource("7_uwoy5")
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("8_wjapv")
+metadata/_edit_lock_ = true
+
+[connection signal="activate" from="." to="Top_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Bottom_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Left_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Right_Wall" method="_on_room_activation"]
+[connection signal="clear" from="." to="Top_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Bottom_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Left_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Right_Wall" method="_on_room_cleared"]
+[connection signal="room_entered" from="Top_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Bottom_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Left_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Right_Wall" to="." method="_on_room_entered"]
+[connection signal="alter_complete" from="Alter" to="." method="_on_alter_complete"]
+[connection signal="placed_blue" from="Alter" to="Brazier_01" method="_turn_on"]
+[connection signal="placed_blue" from="Alter" to="Brazier_03" method="_turn_on"]
+[connection signal="placed_blue" from="Alter" to="Brazier_06" method="_turn_on"]
+[connection signal="placed_blue" from="Alter" to="Brazier_07" method="_turn_on"]
+[connection signal="placed_red" from="Alter" to="Brazier_00" method="_turn_on"]
+[connection signal="placed_red" from="Alter" to="Brazier_02" method="_turn_on"]
+[connection signal="placed_red" from="Alter" to="Brazier_04" method="_turn_on"]
+[connection signal="placed_red" from="Alter" to="Brazier_05" method="_turn_on"]
+
+[editable path="Top_Wall"]
+[editable path="Bottom_Wall"]

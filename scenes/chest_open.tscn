@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwa7pvd1j82ws"]
+
+[ext_resource type="AudioStream" uid="uid://drdy7mumfftfi" path="res://assets/audio/open_chest.mp3" id="1_ptmhg"]
+[ext_resource type="Script" path="res://scripts/death_sound.gd" id="2_n366h"]
+
+[node name="Chest_Open" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ptmhg")
+autoplay = true
+script = ExtResource("2_n366h")

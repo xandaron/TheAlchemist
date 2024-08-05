@@ -1,0 +1,216 @@
+[gd_scene load_steps=41 format=3 uid="uid://cn1hyuv2e5ohm"]
+
+[ext_resource type="Script" path="res://scripts/mobs/shadow_mimic.gd" id="1_4t7pv"]
+[ext_resource type="Texture2D" uid="uid://bohrt226p75ra" path="res://assets/textures/mobs/shadow_mimic/front.png" id="2_no2om"]
+[ext_resource type="Texture2D" uid="uid://be2x6ip4l7cij" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0000.png" id="3_oxfmx"]
+[ext_resource type="Texture2D" uid="uid://b7c2faib6s4i6" path="res://assets/textures/mobs/shadow_mimic/left.png" id="3_ss0c8"]
+[ext_resource type="Texture2D" uid="uid://mt0fncg5ptok" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0001.png" id="4_icjsg"]
+[ext_resource type="Texture2D" uid="uid://40jftq6023ii" path="res://assets/textures/mobs/shadow_mimic/right.png" id="4_r0txr"]
+[ext_resource type="Texture2D" uid="uid://dag108ki1ndg6" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0002.png" id="5_j120p"]
+[ext_resource type="Texture2D" uid="uid://bvf5warx635ad" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0003.png" id="6_510nw"]
+[ext_resource type="Texture2D" uid="uid://d2sfllcso8s1j" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0004.png" id="7_vnqkg"]
+[ext_resource type="Texture2D" uid="uid://cavnjnqkeldf5" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0005.png" id="8_p64aa"]
+[ext_resource type="Texture2D" uid="uid://bdstgyjam4fxi" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0006.png" id="9_xlknd"]
+[ext_resource type="Texture2D" uid="uid://dgfbkao4fsgfw" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0007.png" id="10_3gtne"]
+[ext_resource type="Texture2D" uid="uid://rxw8bmqa8o22" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0008.png" id="11_albyt"]
+[ext_resource type="Texture2D" uid="uid://dgu4urn14if38" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0009.png" id="12_ryy6f"]
+[ext_resource type="Texture2D" uid="uid://c3y0qv028w7so" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0010.png" id="13_x6lkd"]
+[ext_resource type="Texture2D" uid="uid://bg3t8fwrfu50i" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0011.png" id="14_gg3d1"]
+[ext_resource type="Texture2D" uid="uid://bvc6fotdjn7wi" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0012.png" id="15_2ktxd"]
+[ext_resource type="Texture2D" uid="uid://cvo5mkyhqn241" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0013.png" id="16_1kb26"]
+[ext_resource type="Texture2D" uid="uid://cbpl1w2eytr31" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0014.png" id="17_6evme"]
+[ext_resource type="Texture2D" uid="uid://dwvgy63cjqggf" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0015.png" id="18_oe1l5"]
+[ext_resource type="Texture2D" uid="uid://dtapamymmp50u" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0016.png" id="19_72b4k"]
+[ext_resource type="Texture2D" uid="uid://dile0m07o58xa" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0017.png" id="20_jp5uq"]
+[ext_resource type="Texture2D" uid="uid://bho8fjmmr241a" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0018.png" id="21_plq4x"]
+[ext_resource type="Texture2D" uid="uid://dntrtnuwa7wwq" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0019.png" id="22_ax2d7"]
+[ext_resource type="Texture2D" uid="uid://dt82terrn5kql" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0020.png" id="23_1631w"]
+[ext_resource type="Texture2D" uid="uid://cygtxshde8f8c" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0021.png" id="24_ryk0g"]
+[ext_resource type="Texture2D" uid="uid://dhi6d427kfv10" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0022.png" id="25_cgoem"]
+[ext_resource type="Texture2D" uid="uid://pgrcxddiuvrw" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0023.png" id="26_5vxwm"]
+[ext_resource type="Texture2D" uid="uid://dru4rt0u3ixns" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0024.png" id="27_4xkbx"]
+[ext_resource type="Texture2D" uid="uid://dk361adrfh0p4" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0025.png" id="28_83hoj"]
+[ext_resource type="Texture2D" uid="uid://veu5uued7aw1" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0026.png" id="29_tgjet"]
+[ext_resource type="Texture2D" uid="uid://b8ssnkwchw8iy" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0027.png" id="30_jcxnr"]
+[ext_resource type="Texture2D" uid="uid://jhs2gqm0amer" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0028.png" id="31_d8l07"]
+[ext_resource type="Texture2D" uid="uid://dm2ukmet1a038" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0029.png" id="32_30k5a"]
+[ext_resource type="Texture2D" uid="uid://bcgkdapagqs6p" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0030.png" id="33_8gcyv"]
+[ext_resource type="Texture2D" uid="uid://bj4x243h2ag4i" path="res://assets/textures/mobs/shadow_mimic/spawn_animation/Shadow Spawn Animation0031.png" id="34_cmk41"]
+[ext_resource type="Texture2D" uid="uid://dhn4lg68uvjg4" path="res://assets/textures/mobs/shadow_mimic/back.png" id="37_p04nw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2avcd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_no2om")
+}],
+"loop": true,
+"name": &"down",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_no2om")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ss0c8")
+}],
+"loop": true,
+"name": &"left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r0txr")
+}],
+"loop": true,
+"name": &"right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oxfmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_icjsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j120p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_510nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vnqkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p64aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xlknd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3gtne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_albyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ryy6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x6lkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gg3d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2ktxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1kb26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6evme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_oe1l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_72b4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jp5uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_plq4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ax2d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1631w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ryk0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cgoem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5vxwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4xkbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_83hoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tgjet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_jcxnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_d8l07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_30k5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8gcyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cmk41")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_p04nw")
+}],
+"loop": true,
+"name": &"up",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2qki"]
+size = Vector2(10, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wnk4l"]
+radius = 19.0263
+
+[node name="Shadow_Mimic" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 26
+script = ExtResource("1_4t7pv")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2avcd")
+animation = &"spawn"
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_r2qki")
+metadata/_edit_lock_ = true
+
+[node name="Attack_Area" type="Area2D" parent="."]
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Ellipse" type="CollisionShape2D" parent="Attack_Area"]
+shape = SubResource("CircleShape2D_wnk4l")
+metadata/_edit_lock_ = true
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_spawn_finished"]
+[connection signal="area_entered" from="Attack_Area" to="." method="_on_attack_area_entered"]
+[connection signal="area_exited" from="Attack_Area" to="." method="_on_attack_area_exited"]

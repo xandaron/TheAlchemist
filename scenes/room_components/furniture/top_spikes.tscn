@@ -1,0 +1,156 @@
+[gd_scene load_steps=13 format=3 uid="uid://byr0qovhdlgg8"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/spikes.gd" id="1_282bb"]
+[ext_resource type="Texture2D" uid="uid://cm58mutdym71m" path="res://assets/textures/room_assets/walls/brick.png" id="1_nljge"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/wall.gd" id="2_visc7"]
+[ext_resource type="Texture2D" uid="uid://cibb8u1x71gc0" path="res://assets/textures/room_assets/floors/spikes_2.png" id="3_hfljl"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/spike.gd" id="4_wctch"]
+[ext_resource type="Texture2D" uid="uid://bkseftljff6vb" path="res://assets/textures/room_assets/wall_toppers/single/single_05.png" id="5_iiptc"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/single_topper.gd" id="6_1x0cv"]
+[ext_resource type="Texture2D" uid="uid://bvpm0ysup2nar" path="res://assets/textures/room_assets/wall_toppers/single/single_02.png" id="7_o8rnq"]
+[ext_resource type="Texture2D" uid="uid://desno0q564qxl" path="res://assets/textures/room_assets/wall_toppers/short_single/short_single_02.png" id="8_3lvuo"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/short_single_topper.gd" id="9_m27go"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxo0f"]
+size = Vector2(104, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uajo4"]
+size = Vector2(112, 32)
+
+[node name="Top_Spikes" type="Node2D"]
+script = ExtResource("1_282bb")
+
+[node name="Area" type="Area2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-4, 18)
+collision_layer = 0
+collision_mask = 32
+
+[node name="Bounding_Box_0" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_cxo0f")
+metadata/_edit_lock_ = true
+
+[node name="Mob_Collider" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 16
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Mob_Collider"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_uajo4")
+
+[node name="Wall_00" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+texture = ExtResource("1_nljge")
+script = ExtResource("2_visc7")
+metadata/_edit_lock_ = true
+
+[node name="Wall_01" type="Sprite2D" parent="."]
+position = Vector2(-48, 16)
+texture = ExtResource("1_nljge")
+script = ExtResource("2_visc7")
+metadata/_edit_lock_ = true
+
+[node name="Wall_02" type="Sprite2D" parent="."]
+position = Vector2(-32, 16)
+texture = ExtResource("1_nljge")
+script = ExtResource("2_visc7")
+metadata/_edit_lock_ = true
+
+[node name="Wall_03" type="Sprite2D" parent="."]
+position = Vector2(-16, 16)
+texture = ExtResource("1_nljge")
+script = ExtResource("2_visc7")
+metadata/_edit_lock_ = true
+
+[node name="Wall_04" type="Sprite2D" parent="."]
+position = Vector2(48, 16)
+texture = ExtResource("1_nljge")
+script = ExtResource("2_visc7")
+metadata/_edit_lock_ = true
+
+[node name="Wall_05" type="Sprite2D" parent="."]
+position = Vector2(32, 16)
+texture = ExtResource("1_nljge")
+script = ExtResource("2_visc7")
+metadata/_edit_lock_ = true
+
+[node name="Wall_06" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("1_nljge")
+script = ExtResource("2_visc7")
+metadata/_edit_lock_ = true
+
+[node name="Spike_00" type="Sprite2D" parent="."]
+position = Vector2(0, 24)
+texture = ExtResource("3_hfljl")
+script = ExtResource("4_wctch")
+metadata/_edit_lock_ = true
+
+[node name="Spike_01" type="Sprite2D" parent="."]
+position = Vector2(-48, 24)
+texture = ExtResource("3_hfljl")
+script = ExtResource("4_wctch")
+metadata/_edit_lock_ = true
+
+[node name="Spike_02" type="Sprite2D" parent="."]
+position = Vector2(-32, 24)
+texture = ExtResource("3_hfljl")
+script = ExtResource("4_wctch")
+metadata/_edit_lock_ = true
+
+[node name="Spike_03" type="Sprite2D" parent="."]
+position = Vector2(-16, 24)
+texture = ExtResource("3_hfljl")
+script = ExtResource("4_wctch")
+metadata/_edit_lock_ = true
+
+[node name="Spike_04" type="Sprite2D" parent="."]
+position = Vector2(48, 24)
+texture = ExtResource("3_hfljl")
+script = ExtResource("4_wctch")
+metadata/_edit_lock_ = true
+
+[node name="Spike_05" type="Sprite2D" parent="."]
+position = Vector2(32, 24)
+texture = ExtResource("3_hfljl")
+script = ExtResource("4_wctch")
+metadata/_edit_lock_ = true
+
+[node name="Spike_06" type="Sprite2D" parent="."]
+position = Vector2(16, 24)
+texture = ExtResource("3_hfljl")
+script = ExtResource("4_wctch")
+metadata/_edit_lock_ = true
+
+[node name="Edge_00" type="Sprite2D" parent="."]
+position = Vector2(40, 29)
+rotation = 3.14159
+texture = ExtResource("5_iiptc")
+script = ExtResource("6_1x0cv")
+metadata/_edit_lock_ = true
+
+[node name="Edge_01" type="Sprite2D" parent="."]
+position = Vector2(8, 29)
+rotation = -3.14159
+texture = ExtResource("7_o8rnq")
+script = ExtResource("6_1x0cv")
+metadata/_edit_lock_ = true
+
+[node name="Edge_02" type="Sprite2D" parent="."]
+position = Vector2(53, 16)
+rotation = 1.5708
+texture = ExtResource("5_iiptc")
+script = ExtResource("6_1x0cv")
+metadata/_edit_lock_ = true
+
+[node name="Edge_Single_00" type="Sprite2D" parent="."]
+position = Vector2(-16, 29)
+rotation = -3.14159
+texture = ExtResource("8_3lvuo")
+script = ExtResource("9_m27go")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_entered"]

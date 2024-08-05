@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c114ti3l52cqj"]
+
+[ext_resource type="Texture2D" uid="uid://drqqwj6a8b7sx" path="res://assets/textures/room_assets/floors/wood_corridor_straight.png" id="1_ei0tm"]
+[ext_resource type="Script" path="res://scripts/room_scripts/room.gd" id="1_m73kx"]
+[ext_resource type="PackedScene" uid="uid://d2raqekgfns7t" path="res://scenes/room_components/walls/straight_horizontal_corridor_wall.tscn" id="2_r802o"]
+[ext_resource type="PackedScene" uid="uid://bl4i3p0v4bvum" path="res://scenes/room_components/lights/light_with_trigger.tscn" id="4_55a4c"]
+
+[node name="Wood_Horizontal_Corridor" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_m73kx")
+
+[node name="Floor" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_ei0tm")
+metadata/_edit_lock_ = true
+
+[node name="Top_Wall" parent="." instance=ExtResource("2_r802o")]
+position = Vector2(0, -32)
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" parent="." instance=ExtResource("2_r802o")]
+position = Vector2(0, 32)
+metadata/_edit_lock_ = true
+
+[node name="Light_With_Trigger" parent="." instance=ExtResource("4_55a4c")]

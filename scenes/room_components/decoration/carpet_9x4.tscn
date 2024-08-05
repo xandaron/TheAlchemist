@@ -1,0 +1,243 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqk5a5rav4c65"]
+
+[ext_resource type="Texture2D" uid="uid://df07cw43uk1jb" path="res://assets/textures/room_assets/decoration/carpet/red_carpet.png" id="1_v0qxd"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/carpet.gd" id="2_wi6ee"]
+[ext_resource type="Texture2D" uid="uid://fcg45w4jw2ql" path="res://assets/textures/room_assets/decoration/carpet/red_carpet_edge.png" id="3_psr7a"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/carpet_centre.gd" id="3_taa58"]
+[ext_resource type="Texture2D" uid="uid://cof80jrecorl7" path="res://assets/textures/room_assets/decoration/carpet/red_carpet_corner.png" id="4_codo6"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/carper_edge.gd" id="4_svu56"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/carpet_corner.gd" id="6_5cbhi"]
+
+[node name="Carpet" type="Node2D"]
+z_index = -1
+position = Vector2(0, 8)
+script = ExtResource("2_wi6ee")
+
+[node name="Carpet_00" type="Sprite2D" parent="."]
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_01" type="Sprite2D" parent="."]
+position = Vector2(16, -16)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_02" type="Sprite2D" parent="."]
+position = Vector2(-16, -16)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_03" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_05" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_06" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_09" type="Sprite2D" parent="."]
+position = Vector2(48, 0)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_11" type="Sprite2D" parent="."]
+position = Vector2(32, -16)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_12" type="Sprite2D" parent="."]
+position = Vector2(32, 0)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_14" type="Sprite2D" parent="."]
+position = Vector2(48, -16)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_18" type="Sprite2D" parent="."]
+position = Vector2(-48, 0)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_19" type="Sprite2D" parent="."]
+position = Vector2(-32, -16)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_23" type="Sprite2D" parent="."]
+position = Vector2(-48, -16)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_24" type="Sprite2D" parent="."]
+position = Vector2(-32, 0)
+texture = ExtResource("1_v0qxd")
+script = ExtResource("3_taa58")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_04" type="Sprite2D" parent="."]
+position = Vector2(16, -32)
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_07" type="Sprite2D" parent="."]
+position = Vector2(-16, -32)
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_08" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_13" type="Sprite2D" parent="."]
+position = Vector2(32, -32)
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_15" type="Sprite2D" parent="."]
+position = Vector2(48, -32)
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_20" type="Sprite2D" parent="."]
+position = Vector2(-32, -32)
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_25" type="Sprite2D" parent="."]
+position = Vector2(-48, -32)
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_28" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+rotation = 3.14159
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_29" type="Sprite2D" parent="."]
+position = Vector2(-16, 16)
+rotation = 3.14159
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_30" type="Sprite2D" parent="."]
+position = Vector2(0, 16)
+rotation = 3.14159
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_31" type="Sprite2D" parent="."]
+position = Vector2(32, 16)
+rotation = 3.14159
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_32" type="Sprite2D" parent="."]
+position = Vector2(48, 16)
+rotation = 3.14159
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_33" type="Sprite2D" parent="."]
+position = Vector2(-32, 16)
+rotation = 3.14159
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_34" type="Sprite2D" parent="."]
+position = Vector2(-48, 16)
+rotation = 3.14159
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_35" type="Sprite2D" parent="."]
+position = Vector2(-64, 0)
+rotation = 4.71239
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_36" type="Sprite2D" parent="."]
+position = Vector2(-64, -16)
+rotation = 4.71239
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_37" type="Sprite2D" parent="."]
+position = Vector2(-64, -32)
+texture = ExtResource("4_codo6")
+script = ExtResource("6_5cbhi")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_39" type="Sprite2D" parent="."]
+position = Vector2(-64, 16)
+rotation = 4.71239
+texture = ExtResource("4_codo6")
+script = ExtResource("6_5cbhi")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_40" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+rotation = 1.5708
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_41" type="Sprite2D" parent="."]
+position = Vector2(64, -16)
+rotation = 1.5708
+texture = ExtResource("3_psr7a")
+script = ExtResource("4_svu56")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_42" type="Sprite2D" parent="."]
+position = Vector2(64, -32)
+rotation = 1.5708
+texture = ExtResource("4_codo6")
+script = ExtResource("6_5cbhi")
+metadata/_edit_lock_ = true
+
+[node name="Carpet_44" type="Sprite2D" parent="."]
+position = Vector2(64, 16)
+rotation = 3.14159
+texture = ExtResource("4_codo6")
+script = ExtResource("6_5cbhi")
+metadata/_edit_lock_ = true

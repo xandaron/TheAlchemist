@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://bsekbv05ybl30"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/fire_room.gd" id="1_i5a3w"]
+[ext_resource type="PackedScene" uid="uid://dpa6glh67tsej" path="res://scenes/room_components/walls/long_scene_wall.tscn" id="2_4a526"]
+[ext_resource type="PackedScene" uid="uid://dgragmjm2tflw" path="res://scenes/room_components/walls/vertical_side_wall.tscn" id="3_lx3ph"]
+[ext_resource type="PackedScene" uid="uid://c4rnmwo8ehve2" path="res://scenes/room_components/furniture/channel.tscn" id="4_0oim4"]
+[ext_resource type="PackedScene" uid="uid://byr0qovhdlgg8" path="res://scenes/room_components/furniture/top_spikes.tscn" id="4_sy2tl"]
+[ext_resource type="Texture2D" uid="uid://cb6of618mwsuw" path="res://assets/textures/room_assets/floors/brick_8x12.png" id="5_702bg"]
+[ext_resource type="PackedScene" uid="uid://mlsw3or7xelx" path="res://scenes/room_components/furniture/side_spikes.tscn" id="6_lm1ns"]
+[ext_resource type="PackedScene" uid="uid://6otkc7cq4i16" path="res://scenes/room_components/furniture/full_legnth_spikes.tscn" id="7_5pqrk"]
+[ext_resource type="PackedScene" uid="uid://bei1xwhlq74q4" path="res://scenes/room_components/furniture/spike_pit.tscn" id="8_3mdrj"]
+[ext_resource type="PackedScene" uid="uid://byjnbr8a2gnvt" path="res://scenes/room_components/furniture/top_middle_spikes.tscn" id="8_n2pok"]
+
+[sub_resource type="Gradient" id="Gradient_xyspf"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_88mef"]
+gradient = SubResource("Gradient_xyspf")
+fill = 1
+fill_from = Vector2(0.491453, 0.320513)
+fill_to = Vector2(0, 1)
+
+[node name="Fire_Room" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_i5a3w")
+
+[node name="Darkness" type="PointLight2D" parent="."]
+position = Vector2(-1.50204e-05, -16.5)
+scale = Vector2(6.125, 4.64063)
+enabled = false
+blend_mode = 1
+texture = SubResource("GradientTexture2D_88mef")
+metadata/_edit_lock_ = true
+
+[node name="Top_Wall" parent="." instance=ExtResource("2_4a526")]
+position = Vector2(0, -128)
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" parent="." instance=ExtResource("2_4a526")]
+position = Vector2(0, 128)
+fade_distance = Vector2(200, 72)
+metadata/_edit_lock_ = true
+
+[node name="Enter" parent="Bottom_Wall" index="4"]
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_05" parent="Bottom_Wall/Enter" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_06" parent="Bottom_Wall/Enter" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_07" parent="Bottom_Wall/Enter" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_08" parent="Bottom_Wall/Enter" index="3"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_09" parent="Bottom_Wall/Enter" index="4"]
+metadata/_edit_lock_ = true
+
+[node name="Left_Wall" parent="." instance=ExtResource("3_lx3ph")]
+position = Vector2(-192, 0)
+fade_distance = Vector2(72, 200)
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" parent="." instance=ExtResource("3_lx3ph")]
+position = Vector2(192, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+fade_distance = Vector2(72, 200)
+metadata/_edit_lock_ = true
+
+[node name="Channel" parent="." instance=ExtResource("4_0oim4")]
+metadata/_edit_lock_ = true
+
+[node name="Top_Spikes_Left" parent="." instance=ExtResource("4_sy2tl")]
+z_index = -5
+position = Vector2(-136, -128)
+metadata/_edit_lock_ = true
+
+[node name="Top_Spikes_Right" parent="." instance=ExtResource("4_sy2tl")]
+z_index = -5
+position = Vector2(136, -128)
+scale = Vector2(-1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Left_Side_Spikes" parent="." instance=ExtResource("6_lm1ns")]
+position = Vector2(-192, 0)
+metadata/_edit_lock_ = true
+
+[node name="Right_Side_Spikes" parent="." instance=ExtResource("6_lm1ns")]
+position = Vector2(192, 0)
+scale = Vector2(-1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Spikes" parent="." instance=ExtResource("7_5pqrk")]
+position = Vector2(0, 128)
+metadata/_edit_lock_ = true
+
+[node name="Top_Middle_Spikes" parent="." instance=ExtResource("8_n2pok")]
+position = Vector2(0, -128)
+metadata/_edit_lock_ = true
+
+[node name="Spike_Pit_0" parent="." instance=ExtResource("8_3mdrj")]
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("5_702bg")
+metadata/_edit_lock_ = true
+
+[connection signal="activate" from="." to="Top_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Bottom_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Left_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Right_Wall" method="_on_room_activation"]
+[connection signal="clear" from="." to="Top_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Bottom_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Left_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Right_Wall" method="_on_room_cleared"]
+[connection signal="room_entered" from="Top_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Bottom_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Left_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Right_Wall" to="." method="_on_room_entered"]
+
+[editable path="Bottom_Wall"]

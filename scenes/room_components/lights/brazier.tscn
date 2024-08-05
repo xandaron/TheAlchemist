@@ -1,0 +1,371 @@
+[gd_scene load_steps=87 format=3 uid="uid://cmv0t73y2iyww"]
+
+[ext_resource type="Texture2D" uid="uid://g00g6hm6cpd7" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0000.png" id="1_s1w7j"]
+[ext_resource type="Script" path="res://scripts/room_scripts/brazier.gd" id="1_uo7pr"]
+[ext_resource type="Texture2D" uid="uid://bb7iquv50c4d8" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0001.png" id="2_n4iqk"]
+[ext_resource type="Texture2D" uid="uid://f0u28u8pj62d" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0002.png" id="3_f1wdb"]
+[ext_resource type="Texture2D" uid="uid://rktchev4kxpk" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0003.png" id="4_3k1fe"]
+[ext_resource type="Texture2D" uid="uid://cgmchiksmdq1q" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0004.png" id="5_lqirx"]
+[ext_resource type="Texture2D" uid="uid://4o7np1sso5il" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0005.png" id="6_2ttaa"]
+[ext_resource type="Texture2D" uid="uid://28g80b67qqqk" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0006.png" id="7_lb5qk"]
+[ext_resource type="Texture2D" uid="uid://dexg3s2ui3aak" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0007.png" id="8_cq6pv"]
+[ext_resource type="Texture2D" uid="uid://buron1b81rr35" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0008.png" id="9_jhwsh"]
+[ext_resource type="Texture2D" uid="uid://db7wepwohd4q4" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0009.png" id="10_4iwdn"]
+[ext_resource type="Texture2D" uid="uid://pg22gg31xpvo" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0010.png" id="11_xv62w"]
+[ext_resource type="Texture2D" uid="uid://cdovlhflsjog8" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0011.png" id="12_jstvg"]
+[ext_resource type="Texture2D" uid="uid://b52tu7t68mml2" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0012.png" id="13_ooy4b"]
+[ext_resource type="Texture2D" uid="uid://dhtqcm7xt2hf3" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0013.png" id="14_tlxbj"]
+[ext_resource type="Texture2D" uid="uid://b2nwk83i757tv" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0014.png" id="15_s5gml"]
+[ext_resource type="Texture2D" uid="uid://co0h3jsfp6jrm" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0015.png" id="16_06dek"]
+[ext_resource type="Texture2D" uid="uid://c02n3cynye58g" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0016.png" id="17_xhvan"]
+[ext_resource type="Texture2D" uid="uid://0dm6mifg7n6x" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0017.png" id="18_0t77v"]
+[ext_resource type="Texture2D" uid="uid://bqcrg0brmwip3" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0018.png" id="19_m1jte"]
+[ext_resource type="Texture2D" uid="uid://7ig8e1qk0tds" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0019.png" id="20_fppni"]
+[ext_resource type="Texture2D" uid="uid://bfhwmx7uvu3cm" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0020.png" id="21_1pnlp"]
+[ext_resource type="Texture2D" uid="uid://cnmxtyqyvd757" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0021.png" id="22_ylm51"]
+[ext_resource type="Texture2D" uid="uid://b88hnj2h80ejn" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0022.png" id="23_d7hrk"]
+[ext_resource type="Texture2D" uid="uid://did75p4k38gux" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0023.png" id="24_hod5i"]
+[ext_resource type="Texture2D" uid="uid://bhldq6g73gpjj" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0024.png" id="25_214vi"]
+[ext_resource type="Texture2D" uid="uid://due8px1nhrt2a" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0025.png" id="26_j1unt"]
+[ext_resource type="Texture2D" uid="uid://ck6pi1adxb8od" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0026.png" id="27_q6p5q"]
+[ext_resource type="Texture2D" uid="uid://mw4japgv766f" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0027.png" id="28_mt5xy"]
+[ext_resource type="Texture2D" uid="uid://m1ptnghev01u" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0028.png" id="29_xa3nq"]
+[ext_resource type="Texture2D" uid="uid://brxxhba2g1dgp" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0029.png" id="30_2j0in"]
+[ext_resource type="Texture2D" uid="uid://bkv1jl3jddal6" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0030.png" id="31_5dsk5"]
+[ext_resource type="Texture2D" uid="uid://cohe6umkdkeo6" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0031.png" id="32_upoek"]
+[ext_resource type="Texture2D" uid="uid://df604lxfanoat" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0032.png" id="33_o8d52"]
+[ext_resource type="Texture2D" uid="uid://dqu61flq3sgpx" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0033.png" id="34_etjae"]
+[ext_resource type="Texture2D" uid="uid://c0ig5gcuqh25l" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0034.png" id="35_b1np5"]
+[ext_resource type="Texture2D" uid="uid://cpbbskmgd7sf6" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0035.png" id="36_fe0kj"]
+[ext_resource type="Texture2D" uid="uid://d2vmy4xw2tvii" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0036.png" id="37_seys3"]
+[ext_resource type="Texture2D" uid="uid://4vgvf3td2vxs" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0037.png" id="38_1is1i"]
+[ext_resource type="Texture2D" uid="uid://vo1w53elyxyy" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0038.png" id="39_7tcce"]
+[ext_resource type="Texture2D" uid="uid://dc36glx6e8mtx" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0039.png" id="40_hs6lr"]
+[ext_resource type="Texture2D" uid="uid://n3kucaclayvy" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0040.png" id="41_lpi1m"]
+[ext_resource type="Texture2D" uid="uid://d1fkgsx4aasaq" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0041.png" id="42_m4q2h"]
+[ext_resource type="Texture2D" uid="uid://dlqbkorq5pq63" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0042.png" id="43_4us7e"]
+[ext_resource type="Texture2D" uid="uid://d4byylquf51np" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0043.png" id="44_h241x"]
+[ext_resource type="Texture2D" uid="uid://ciohh2ntru66n" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0044.png" id="45_13bug"]
+[ext_resource type="Texture2D" uid="uid://b6lmcnra17076" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0045.png" id="46_mv8p8"]
+[ext_resource type="Texture2D" uid="uid://48a0lxqdbvk0" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0046.png" id="47_1dgr3"]
+[ext_resource type="Texture2D" uid="uid://0b2o8rvxhgh" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0047.png" id="48_eoqxp"]
+[ext_resource type="Texture2D" uid="uid://cv1pyf4nwqjry" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0048.png" id="49_7j7d7"]
+[ext_resource type="Texture2D" uid="uid://dd7xoobdy0r8i" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0049.png" id="50_4l2ov"]
+[ext_resource type="Texture2D" uid="uid://dwes33nbwf2sp" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0050.png" id="51_qhyj2"]
+[ext_resource type="Texture2D" uid="uid://btsx1fn56gebo" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0051.png" id="52_kpkrq"]
+[ext_resource type="Texture2D" uid="uid://2frc4eh2w7w5" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0052.png" id="53_pqmjy"]
+[ext_resource type="Texture2D" uid="uid://bq1flttp7tq3d" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0053.png" id="54_wrwn5"]
+[ext_resource type="Texture2D" uid="uid://cy7kbhrchijuu" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0054.png" id="55_w2qi4"]
+[ext_resource type="Texture2D" uid="uid://d3hicdi78e6tn" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0055.png" id="56_mltfa"]
+[ext_resource type="Texture2D" uid="uid://8881o27r8xkl" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0056.png" id="57_bib1g"]
+[ext_resource type="Texture2D" uid="uid://bw5kjmb73vigk" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0057.png" id="58_3i6g5"]
+[ext_resource type="Texture2D" uid="uid://djm8bewwc0ws6" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0058.png" id="59_toi2v"]
+[ext_resource type="Texture2D" uid="uid://dcwa2iraea8as" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0059.png" id="60_dacui"]
+[ext_resource type="Texture2D" uid="uid://sk15thwkqcgq" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0060.png" id="61_ylcdm"]
+[ext_resource type="Texture2D" uid="uid://b8mlpnygo73qw" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0061.png" id="62_3qv0j"]
+[ext_resource type="Texture2D" uid="uid://8t5faeghxknb" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0062.png" id="63_ig0ew"]
+[ext_resource type="Texture2D" uid="uid://cqm0nyw30t2k8" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0063.png" id="64_8ehpa"]
+[ext_resource type="Texture2D" uid="uid://1o72sxkehr0y" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0064.png" id="65_cyma6"]
+[ext_resource type="Texture2D" uid="uid://s1rlhw61ow4d" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0065.png" id="66_8doal"]
+[ext_resource type="Texture2D" uid="uid://bxy884rv053at" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0066.png" id="67_70qbm"]
+[ext_resource type="Texture2D" uid="uid://blrc4bl4ip4y7" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0067.png" id="68_r4egf"]
+[ext_resource type="Texture2D" uid="uid://40wa5f225yf8" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0068.png" id="69_4opql"]
+[ext_resource type="Texture2D" uid="uid://mr2qe8ufeucb" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0069.png" id="70_c6wik"]
+[ext_resource type="Texture2D" uid="uid://ct2p3ftwmvhq0" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0070.png" id="71_5jrd3"]
+[ext_resource type="Texture2D" uid="uid://p5pbdn0l2pd6" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0071.png" id="72_bgdhk"]
+[ext_resource type="Texture2D" uid="uid://b28ypaggbb8vs" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0072.png" id="73_heqk7"]
+[ext_resource type="Texture2D" uid="uid://drd6d61lirspp" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0073.png" id="74_pyvkq"]
+[ext_resource type="Texture2D" uid="uid://sdipsuoe8hd0" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0074.png" id="75_4lryy"]
+[ext_resource type="Texture2D" uid="uid://qjdcbuc5tf7i" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0075.png" id="76_lmqp5"]
+[ext_resource type="Texture2D" uid="uid://d0nthjy0t3tfi" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0076.png" id="77_u6wsq"]
+[ext_resource type="Texture2D" uid="uid://dfbgu0modp2xn" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0077.png" id="78_ctd25"]
+[ext_resource type="Texture2D" uid="uid://b8dkdrsrltko0" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0078.png" id="79_voaya"]
+[ext_resource type="Texture2D" uid="uid://dm3nkhbwtqlwi" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0079.png" id="80_rkxau"]
+[ext_resource type="Texture2D" uid="uid://b6y50lgqv7jde" path="res://assets/textures/room_assets/lights/brazier/lit/lit Brazier0080.png" id="81_ef7px"]
+[ext_resource type="Texture2D" uid="uid://dp7sj27gag4fh" path="res://assets/textures/room_assets/lights/brazier/brazier_unlit.png" id="82_08d83"]
+[ext_resource type="Texture2D" uid="uid://8adpkfjcluj3" path="res://light_texture.tres" id="83_eamj4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3j2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s1w7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n4iqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f1wdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3k1fe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lqirx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2ttaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lb5qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cq6pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jhwsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4iwdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xv62w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jstvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ooy4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tlxbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_s5gml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_06dek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xhvan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0t77v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m1jte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fppni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1pnlp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ylm51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_d7hrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hod5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_214vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_j1unt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_q6p5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_mt5xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_xa3nq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2j0in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5dsk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_upoek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_o8d52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_etjae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_b1np5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fe0kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_seys3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1is1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_7tcce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hs6lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_lpi1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_m4q2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_4us7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_h241x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_13bug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_mv8p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1dgr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_eoqxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_7j7d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_4l2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_qhyj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_kpkrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_pqmjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_wrwn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_w2qi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_mltfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_bib1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_3i6g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_toi2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_dacui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ylcdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_3qv0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ig0ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_8ehpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_cyma6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_8doal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_70qbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_r4egf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_4opql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_c6wik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_5jrd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_bgdhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_heqk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_pyvkq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_4lryy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_lmqp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_u6wsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_ctd25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_voaya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_rkxau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_ef7px")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("82_08d83")
+}],
+"loop": true,
+"name": &"unlit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrebc"]
+size = Vector2(10, 4)
+
+[node name="Brazier" type="Node2D"]
+script = ExtResource("1_uo7pr")
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(0, -9)
+color = Color(0.752555, 0.262464, 0, 1)
+texture = ExtResource("83_eamj4")
+texture_scale = 3.0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_f3j2o")
+animation = &"lit"
+frame_progress = 0.408889
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_wrebc")

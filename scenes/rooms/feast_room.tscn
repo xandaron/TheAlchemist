@@ -1,0 +1,201 @@
+[gd_scene load_steps=13 format=3 uid="uid://1kwl3e8dkoi4"]
+
+[ext_resource type="Texture2D" uid="uid://bsg78prouiucl" path="res://assets/textures/room_assets/floors/wood_8x12.png" id="1_18ait"]
+[ext_resource type="Script" path="res://scripts/room_scripts/feast_room.gd" id="1_idxsg"]
+[ext_resource type="PackedScene" uid="uid://bqk5a5rav4c65" path="res://scenes/room_components/decoration/carpet_9x4.tscn" id="3_y1n5w"]
+[ext_resource type="PackedScene" uid="uid://5jwib8f08mqj" path="res://scenes/room_components/decoration/corner_pillar.tscn" id="4_bgmuq"]
+[ext_resource type="PackedScene" uid="uid://78362172umor" path="res://scenes/room_components/decoration/fliped_corner_pillar.tscn" id="4_jt30a"]
+[ext_resource type="PackedScene" uid="uid://dpa6glh67tsej" path="res://scenes/room_components/walls/long_scene_wall.tscn" id="5_1q3qw"]
+[ext_resource type="PackedScene" uid="uid://wt67doewkgsf" path="res://scenes/room_components/leaver_side.tscn" id="8_bky0n"]
+[ext_resource type="PackedScene" uid="uid://dgragmjm2tflw" path="res://scenes/room_components/walls/vertical_side_wall.tscn" id="8_igfak"]
+[ext_resource type="PackedScene" uid="uid://compap2wgaimn" path="res://scenes/room_components/lights/candelabra.tscn" id="9_4t4pl"]
+[ext_resource type="PackedScene" uid="uid://burgrwcv4kohg" path="res://scenes/room_components/decoration/table_set.tscn" id="10_tl0xa"]
+
+[sub_resource type="Gradient" id="Gradient_xyspf"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_88mef"]
+gradient = SubResource("Gradient_xyspf")
+fill = 1
+fill_from = Vector2(0.491453, 0.320513)
+fill_to = Vector2(0, 1)
+
+[node name="Feast_Room" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_idxsg")
+metadata/_edit_lock_ = true
+
+[node name="Darkness" type="PointLight2D" parent="."]
+position = Vector2(-1.50204e-05, -16.5)
+scale = Vector2(6.125, 4.64063)
+enabled = false
+blend_mode = 1
+texture = SubResource("GradientTexture2D_88mef")
+
+[node name="Top_Wall" parent="." instance=ExtResource("5_1q3qw")]
+position = Vector2(0, -128)
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" parent="." instance=ExtResource("5_1q3qw")]
+position = Vector2(0, 128)
+metadata/_edit_lock_ = true
+
+[node name="Enter" parent="Bottom_Wall" index="4"]
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_05" parent="Bottom_Wall/Enter" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_06" parent="Bottom_Wall/Enter" index="1"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_07" parent="Bottom_Wall/Enter" index="2"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_08" parent="Bottom_Wall/Enter" index="3"]
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_09" parent="Bottom_Wall/Enter" index="4"]
+metadata/_edit_lock_ = true
+
+[node name="Left_Wall" parent="." instance=ExtResource("8_igfak")]
+position = Vector2(-192, 0)
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" parent="." instance=ExtResource("8_igfak")]
+position = Vector2(192, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Floor" type="Sprite2D" parent="."]
+z_index = -2
+texture = ExtResource("1_18ait")
+metadata/_edit_lock_ = true
+
+[node name="Carpet" parent="." instance=ExtResource("3_y1n5w")]
+
+[node name="Corner_Pillar_00" parent="." instance=ExtResource("4_bgmuq")]
+position = Vector2(120, -72)
+metadata/_edit_lock_ = true
+
+[node name="Corner_Pillar_01" parent="." instance=ExtResource("4_bgmuq")]
+position = Vector2(-120, -72)
+scale = Vector2(-1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Corner_Pillar_02" parent="." instance=ExtResource("4_jt30a")]
+position = Vector2(120, 72)
+metadata/_edit_lock_ = true
+
+[node name="Corner_Pillar_03" parent="." instance=ExtResource("4_jt30a")]
+position = Vector2(-120, 72)
+scale = Vector2(-1, 1)
+metadata/_edit_lock_ = true
+
+[node name="NW_Trigger" type="Node2D" parent="."]
+position = Vector2(-120, -72)
+metadata/_edit_lock_ = true
+
+[node name="Leaver_Front" parent="NW_Trigger" instance=ExtResource("8_bky0n")]
+position = Vector2(-14, -18)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_00" parent="NW_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(-60.5, 25)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_01" parent="NW_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(79.5, -50)
+metadata/_edit_lock_ = true
+
+[node name="NE_Trigger" type="Node2D" parent="."]
+position = Vector2(120, -72)
+scale = Vector2(-1, 1)
+metadata/_edit_lock_ = true
+
+[node name="Leaver_Front" parent="NE_Trigger" instance=ExtResource("8_bky0n")]
+position = Vector2(-14, -18)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_00" parent="NE_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(-59.5, 25)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_01" parent="NE_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(80.5, -50)
+metadata/_edit_lock_ = true
+
+[node name="SE_Trigger" type="Node2D" parent="."]
+position = Vector2(120, 72)
+scale = Vector2(-1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Leaver_Front" parent="SE_Trigger" instance=ExtResource("8_bky0n")]
+position = Vector2(-14, 0)
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_00" parent="SE_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(-59.5, 40)
+rotation = 3.14159
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_01" parent="SE_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(80.5, -50)
+rotation = 3.14159
+metadata/_edit_lock_ = true
+
+[node name="SW_Trigger" type="Node2D" parent="."]
+position = Vector2(-120, 72)
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Leaver_Front" parent="SW_Trigger" instance=ExtResource("8_bky0n")]
+position = Vector2(-14, 0)
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_00" parent="SW_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(-60.5, 40)
+rotation = 3.14159
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_01" parent="SW_Trigger" instance=ExtResource("9_4t4pl")]
+position = Vector2(79.5, -50)
+rotation = 3.14159
+metadata/_edit_lock_ = true
+
+[node name="Table_Set" parent="." instance=ExtResource("10_tl0xa")]
+
+[connection signal="activate" from="." to="Top_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Bottom_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Left_Wall" method="_on_room_activation"]
+[connection signal="activate" from="." to="Right_Wall" method="_on_room_activation"]
+[connection signal="clear" from="." to="Top_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Bottom_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Left_Wall" method="_on_room_cleared"]
+[connection signal="clear" from="." to="Right_Wall" method="_on_room_cleared"]
+[connection signal="room_entered" from="Top_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Bottom_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Left_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Right_Wall" to="." method="_on_room_entered"]
+[connection signal="trigger" from="NW_Trigger/Leaver_Front" to="." method="_on_leaver_trigger"]
+[connection signal="trigger" from="NW_Trigger/Leaver_Front" to="NW_Trigger/Candelabra_00" method="_turn_on"]
+[connection signal="trigger" from="NW_Trigger/Leaver_Front" to="NW_Trigger/Candelabra_01" method="_turn_on"]
+[connection signal="trigger" from="NE_Trigger/Leaver_Front" to="." method="_on_leaver_trigger"]
+[connection signal="trigger" from="NE_Trigger/Leaver_Front" to="NE_Trigger/Candelabra_00" method="_turn_on"]
+[connection signal="trigger" from="NE_Trigger/Leaver_Front" to="NE_Trigger/Candelabra_01" method="_turn_on"]
+[connection signal="trigger" from="SE_Trigger/Leaver_Front" to="." method="_on_leaver_trigger"]
+[connection signal="trigger" from="SE_Trigger/Leaver_Front" to="SE_Trigger/Candelabra_00" method="_turn_on"]
+[connection signal="trigger" from="SE_Trigger/Leaver_Front" to="SE_Trigger/Candelabra_01" method="_turn_on"]
+[connection signal="trigger" from="SW_Trigger/Leaver_Front" to="." method="_on_leaver_trigger"]
+[connection signal="trigger" from="SW_Trigger/Leaver_Front" to="SW_Trigger/Candelabra_00" method="_turn_on"]
+[connection signal="trigger" from="SW_Trigger/Leaver_Front" to="SW_Trigger/Candelabra_01" method="_turn_on"]
+
+[editable path="Bottom_Wall"]
+[editable path="SW_Trigger/Candelabra_00"]
+[editable path="SW_Trigger/Candelabra_01"]

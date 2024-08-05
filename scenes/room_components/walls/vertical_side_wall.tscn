@@ -1,0 +1,134 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgragmjm2tflw"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/long_scene_wall.gd" id="1_8vure"]
+[ext_resource type="Texture2D" uid="uid://dcovy82lras4" path="res://assets/textures/room_assets/wall_toppers/single/single_00.png" id="2_ned8d"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/single_topper.gd" id="3_qtw5v"]
+[ext_resource type="Texture2D" uid="uid://b87xkk8dd4kpn" path="res://assets/textures/room_assets/wall_toppers/short_single/short_single_05.png" id="6_w6ukt"]
+[ext_resource type="Script" path="res://scripts/room_scripts/short_single_topper.gd" id="7_eceys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56vov"]
+size = Vector2(6, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0rqv"]
+size = Vector2(6, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hle"]
+size = Vector2(6, 69)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gkuvu"]
+polygon = PackedVector2Array(-1, 96, 5, 96, 5, 62, -1, 62)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oay1s"]
+polygon = PackedVector2Array(-1, 97, 5, 97, 5, 64, -1, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv2ed"]
+size = Vector2(27, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_duv0h"]
+size = Vector2(8.25009, 289)
+
+[node name="Vertical_Side_Wall" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+script = ExtResource("1_8vure")
+left = Vector2(3, 48)
+right = Vector2(3, -94)
+centre = Vector2(3, -23)
+orientation = 1
+
+[node name="Topper_00" type="Sprite2D" parent="."]
+position = Vector2(3.00006, 80)
+rotation = 4.71239
+texture = ExtResource("2_ned8d")
+script = ExtResource("3_qtw5v")
+metadata/_edit_lock_ = true
+
+[node name="Topper_01" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3.00006, -140)
+rotation = 4.71239
+texture = ExtResource("2_ned8d")
+script = ExtResource("3_qtw5v")
+metadata/_edit_lock_ = true
+
+[node name="Topper_02" type="Sprite2D" parent="."]
+position = Vector2(3.00006, 16)
+rotation = -1.5708
+texture = ExtResource("2_ned8d")
+script = ExtResource("3_qtw5v")
+metadata/_edit_lock_ = true
+
+[node name="Topper_03" type="Sprite2D" parent="."]
+position = Vector2(3.00006, -62)
+rotation = -1.5708
+texture = ExtResource("2_ned8d")
+script = ExtResource("3_qtw5v")
+metadata/_edit_lock_ = true
+
+[node name="Short_Topper_00" type="Sprite2D" parent="."]
+position = Vector2(3.00009, -117)
+rotation = -1.5708
+texture = ExtResource("6_w6ukt")
+script = ExtResource("7_eceys")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1.00009, 0)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_00" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, -118.5)
+shape = SubResource("RectangleShape2D_56vov")
+
+[node name="Bounding_Box_01" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, -62.5)
+shape = SubResource("RectangleShape2D_e0rqv")
+
+[node name="Bounding_Box_02" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 99.5)
+shape = SubResource("RectangleShape2D_p2hle")
+
+[node name="Bounding_Box_03" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 16)
+shape = SubResource("RectangleShape2D_e0rqv")
+
+[node name="Occluder_00" type="LightOccluder2D" parent="."]
+position = Vector2(1.00009, 0)
+occluder = SubResource("OccluderPolygon2D_gkuvu")
+metadata/_edit_lock_ = true
+
+[node name="Occluder_01" type="LightOccluder2D" parent="."]
+position = Vector2(1.00009, -65)
+occluder = SubResource("OccluderPolygon2D_oay1s")
+metadata/_edit_lock_ = true
+
+[node name="Occluder_02" type="LightOccluder2D" parent="."]
+position = Vector2(1.00009, -141)
+occluder = SubResource("OccluderPolygon2D_gkuvu")
+metadata/_edit_lock_ = true
+
+[node name="Occluder_03" type="LightOccluder2D" parent="."]
+position = Vector2(1.00009, -204)
+occluder = SubResource("OccluderPolygon2D_gkuvu")
+metadata/_edit_lock_ = true
+
+[node name="Enter" type="Area2D" parent="."]
+position = Vector2(1.00009, 0)
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box_10" type="CollisionShape2D" parent="Enter"]
+position = Vector2(18.25, 17)
+shape = SubResource("RectangleShape2D_mv2ed")
+
+[node name="Bounding_Box_12" type="CollisionShape2D" parent="Enter"]
+position = Vector2(18.4999, -64)
+shape = SubResource("RectangleShape2D_mv2ed")
+
+[node name="Bounding_Box_14" type="CollisionShape2D" parent="Enter"]
+position = Vector2(36.125, -10.5)
+shape = SubResource("RectangleShape2D_duv0h")
+
+[connection signal="area_entered" from="Enter" to="." method="_on_room_entered"]

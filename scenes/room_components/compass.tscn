@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb78q6myspi8e"]
+
+[ext_resource type="Texture2D" uid="uid://b8wnoywn5ifpp" path="res://assets/textures/room_assets/decoration/compass.png" id="1_gbhvw"]
+[ext_resource type="Script" path="res://scripts/compass.gd" id="1_r01y7"]
+[ext_resource type="Texture2D" uid="uid://bpdc8gf2k5ol" path="res://assets/textures/room_assets/floors/stone_tile_2x2.png" id="2_l6wjw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maamn"]
+radius = 18.4391
+
+[node name="Compass" type="Node2D"]
+script = ExtResource("1_r01y7")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+z_index = -5
+texture = ExtResource("1_gbhvw")
+metadata/_edit_lock_ = true
+
+[node name="Stone_Tile" type="Sprite2D" parent="."]
+z_index = -6
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("2_l6wjw")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_maamn")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_exited"]

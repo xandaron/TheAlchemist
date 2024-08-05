@@ -1,0 +1,142 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2raqekgfns7t"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/sprite_fade.gd" id="1_pxbgj"]
+[ext_resource type="Texture2D" uid="uid://cm58mutdym71m" path="res://assets/textures/room_assets/walls/brick.png" id="1_rm8ei"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/wall.gd" id="2_j0cak"]
+[ext_resource type="Texture2D" uid="uid://cajt1yf0lc4hb" path="res://assets/textures/room_assets/wall_toppers/double/double_00.png" id="3_24yp8"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/double_topper.gd" id="4_lpyll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ubun"]
+size = Vector2(256, 4)
+
+[node name="Straing_Horizontal_Corridor_Wall" type="Node2D"]
+script = ExtResource("1_pxbgj")
+fade_distance = Vector2(136, 40)
+
+[node name="Wall_00" type="Sprite2D" parent="."]
+position = Vector2(104, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_01" type="Sprite2D" parent="."]
+position = Vector2(120, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_00" type="Sprite2D" parent="."]
+position = Vector2(112, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Wall_02" type="Sprite2D" parent="."]
+position = Vector2(72, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_03" type="Sprite2D" parent="."]
+position = Vector2(88, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_01" type="Sprite2D" parent="."]
+position = Vector2(80, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Wall_04" type="Sprite2D" parent="."]
+position = Vector2(40, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_05" type="Sprite2D" parent="."]
+position = Vector2(56, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_02" type="Sprite2D" parent="."]
+position = Vector2(48, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Wall_06" type="Sprite2D" parent="."]
+position = Vector2(8, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_07" type="Sprite2D" parent="."]
+position = Vector2(24, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_03" type="Sprite2D" parent="."]
+position = Vector2(16, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Wall_08" type="Sprite2D" parent="."]
+position = Vector2(-24, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_09" type="Sprite2D" parent="."]
+position = Vector2(-8, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_04" type="Sprite2D" parent="."]
+position = Vector2(-16, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Wall_10" type="Sprite2D" parent="."]
+position = Vector2(-56, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_11" type="Sprite2D" parent="."]
+position = Vector2(-40, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_05" type="Sprite2D" parent="."]
+position = Vector2(-48, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Wall_12" type="Sprite2D" parent="."]
+position = Vector2(-88, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_13" type="Sprite2D" parent="."]
+position = Vector2(-72, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_06" type="Sprite2D" parent="."]
+position = Vector2(-80, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Wall_14" type="Sprite2D" parent="."]
+position = Vector2(-120, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Wall_15" type="Sprite2D" parent="."]
+position = Vector2(-104, -16)
+texture = ExtResource("1_rm8ei")
+script = ExtResource("2_j0cak")
+
+[node name="Topper_07" type="Sprite2D" parent="."]
+position = Vector2(-112, -26.5)
+texture = ExtResource("3_24yp8")
+script = ExtResource("4_lpyll")
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_8ubun")

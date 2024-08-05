@@ -1,14 +1,14 @@
 extends Node2D
 
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		get_tree().quit(0)
-
 func _input(event):
-	if event.is_action("quit"):
-		get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
-	if event.is_action("menu") and event.is_pressed():
+	if event.is_action_pressed("quit"):
+		if GlobalVariables.in_menu:
+			GlobalVariables.in_menu = not GlobalVariables.in_menu
+			$"../Camera".get_child(0).toggle_ui_type()
+	elif event.is_action_pressed("menu"):
 		GlobalVariables.paused = not GlobalVariables.paused
-
-func _on_player_death():
-	GlobalVariables.paused = true
+	elif event.is_action_pressed("heal_debug"):
+		PlayerVariables.heal_player(100, 1000)
+	elif event.is_action_pressed("potion_craft"):
+		GlobalVariables.in_menu = not GlobalVariables.in_menu
+		$"../Camera".get_child(0).toggle_ui_type()

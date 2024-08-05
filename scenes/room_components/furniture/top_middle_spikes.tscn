@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=3 uid="uid://byjnbr8a2gnvt"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/spikes.gd" id="1_prjdk"]
+[ext_resource type="Texture2D" uid="uid://cm58mutdym71m" path="res://assets/textures/room_assets/walls/brick.png" id="1_rdko6"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/wall.gd" id="2_t35ec"]
+[ext_resource type="Texture2D" uid="uid://cibb8u1x71gc0" path="res://assets/textures/room_assets/floors/spikes_2.png" id="3_qvecj"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/spike.gd" id="4_26c50"]
+[ext_resource type="Texture2D" uid="uid://bkseftljff6vb" path="res://assets/textures/room_assets/wall_toppers/single/single_05.png" id="5_j4hsu"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/single_topper.gd" id="6_fr8f5"]
+[ext_resource type="Texture2D" uid="uid://bvpm0ysup2nar" path="res://assets/textures/room_assets/wall_toppers/single/single_02.png" id="7_wh4nn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7fw0"]
+size = Vector2(112, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xxrc"]
+size = Vector2(128, 32)
+
+[node name="Top_Middle_Spikes" type="Node2D"]
+z_index = -5
+script = ExtResource("1_prjdk")
+
+[node name="Area" type="Area2D" parent="."]
+position = Vector2(8, 0)
+collision_layer = 0
+collision_mask = 32
+
+[node name="Bounding_Box_0" type="CollisionShape2D" parent="Area"]
+visible = false
+position = Vector2(-8, 12.5)
+shape = SubResource("RectangleShape2D_c7fw0")
+
+[node name="Mob_Collider" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Mob_Collider"]
+visible = false
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_3xxrc")
+
+[node name="Wall_00" type="Sprite2D" parent="."]
+position = Vector2(8, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Wall_01" type="Sprite2D" parent="."]
+position = Vector2(-40, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Wall_02" type="Sprite2D" parent="."]
+position = Vector2(-24, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Wall_03" type="Sprite2D" parent="."]
+position = Vector2(-8, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Wall_04" type="Sprite2D" parent="."]
+position = Vector2(56, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Wall_05" type="Sprite2D" parent="."]
+position = Vector2(40, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Wall_06" type="Sprite2D" parent="."]
+position = Vector2(24, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Spike_00" type="Sprite2D" parent="."]
+position = Vector2(8, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Spike_01" type="Sprite2D" parent="."]
+position = Vector2(-40, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Spike_02" type="Sprite2D" parent="."]
+position = Vector2(-24, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Spike_03" type="Sprite2D" parent="."]
+position = Vector2(-8, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Spike_04" type="Sprite2D" parent="."]
+position = Vector2(56, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Spike_05" type="Sprite2D" parent="."]
+position = Vector2(40, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Spike_06" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Edge_00" type="Sprite2D" parent="."]
+position = Vector2(48, 29)
+rotation = 3.14159
+texture = ExtResource("5_j4hsu")
+script = ExtResource("6_fr8f5")
+
+[node name="Edge_01" type="Sprite2D" parent="."]
+position = Vector2(16, 29)
+rotation = -3.14159
+texture = ExtResource("7_wh4nn")
+script = ExtResource("6_fr8f5")
+
+[node name="Edge_02" type="Sprite2D" parent="."]
+position = Vector2(61, 16)
+rotation = 1.5708
+texture = ExtResource("5_j4hsu")
+script = ExtResource("6_fr8f5")
+
+[node name="Wall_08" type="Sprite2D" parent="."]
+position = Vector2(-56, 16)
+texture = ExtResource("1_rdko6")
+script = ExtResource("2_t35ec")
+
+[node name="Spike_08" type="Sprite2D" parent="."]
+position = Vector2(-56, 24)
+texture = ExtResource("3_qvecj")
+script = ExtResource("4_26c50")
+
+[node name="Edge_04" type="Sprite2D" parent="."]
+position = Vector2(-61, 16)
+rotation = 4.71239
+texture = ExtResource("5_j4hsu")
+script = ExtResource("6_fr8f5")
+
+[node name="Edge_05" type="Sprite2D" parent="."]
+position = Vector2(-16, 29)
+rotation = 3.14159
+texture = ExtResource("5_j4hsu")
+script = ExtResource("6_fr8f5")
+
+[node name="Edge_06" type="Sprite2D" parent="."]
+position = Vector2(-48, 29)
+rotation = -3.14159
+texture = ExtResource("5_j4hsu")
+script = ExtResource("6_fr8f5")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_entered"]

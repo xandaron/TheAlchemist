@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc1qa7frrqdf8"]
+
+[ext_resource type="Script" path="res://scripts/chest.gd" id="1_yod7l"]
+[ext_resource type="Texture2D" uid="uid://b0d3k11hpxoqn" path="res://assets/textures/room_assets/furniture/chest_front.png" id="2_0u6k1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opwwt"]
+size = Vector2(16, 8.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyxsq"]
+size = Vector2(26.5, 21)
+
+[node name="Item_Chest" type="Node2D"]
+script = ExtResource("1_yod7l")
+
+[node name="Chest" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
+texture = ExtResource("2_0u6k1")
+metadata/_edit_lock_ = true
+
+[node name="Body" type="StaticBody2D" parent="."]
+position = Vector2(0, -4)
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_opwwt")
+metadata/_edit_lock_ = true
+
+[node name="Open_Area" type="Area2D" parent="."]
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="Bound" type="CollisionShape2D" parent="Open_Area"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_eyxsq")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="Open_Area" to="." method="_on_open_area_entered"]

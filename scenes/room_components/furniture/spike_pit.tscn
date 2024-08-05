@@ -1,0 +1,375 @@
+[gd_scene load_steps=12 format=3 uid="uid://bei1xwhlq74q4"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/spikes.gd" id="1_21ccn"]
+[ext_resource type="Texture2D" uid="uid://cibb8u1x71gc0" path="res://assets/textures/room_assets/floors/spikes_2.png" id="1_gdudr"]
+[ext_resource type="Texture2D" uid="uid://cm58mutdym71m" path="res://assets/textures/room_assets/walls/brick.png" id="1_noy0w"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/wall.gd" id="2_7xxdl"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/spike.gd" id="2_n3dir"]
+[ext_resource type="Texture2D" uid="uid://dcovy82lras4" path="res://assets/textures/room_assets/wall_toppers/single/single_00.png" id="5_f1y4c"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/single_topper.gd" id="6_vnm8b"]
+[ext_resource type="Texture2D" uid="uid://8e8n35dk1vcv" path="res://assets/textures/room_assets/wall_toppers/double/double_04.png" id="7_xro36"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/double_topper.gd" id="8_qadqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncpil"]
+size = Vector2(112, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gay3"]
+size = Vector2(128, 96)
+
+[node name="Spike_Pit" type="Node2D"]
+z_index = -5
+script = ExtResource("1_21ccn")
+
+[node name="Area" type="Area2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(8, 0)
+collision_layer = 0
+collision_mask = 32
+
+[node name="Bounding_Box_0" type="CollisionShape2D" parent="Area"]
+position = Vector2(-8, 1)
+shape = SubResource("RectangleShape2D_ncpil")
+
+[node name="Mob_Collider" type="StaticBody2D" parent="."]
+visible = false
+z_index = 1
+collision_layer = 16
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Mob_Collider"]
+shape = SubResource("RectangleShape2D_1gay3")
+
+[node name="Wall_0" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-56, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Wall_1" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-40, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Wall_2" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(40, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Wall_3" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(56, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Wall_4" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(8, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Wall_5" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(24, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Wall_6" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-24, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Wall_7" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-8, -32)
+texture = ExtResource("1_noy0w")
+script = ExtResource("2_7xxdl")
+
+[node name="Spike_0" type="Sprite2D" parent="."]
+position = Vector2(-24, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_1" type="Sprite2D" parent="."]
+position = Vector2(-8, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_2" type="Sprite2D" parent="."]
+position = Vector2(-24, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_3" type="Sprite2D" parent="."]
+position = Vector2(-8, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_6" type="Sprite2D" parent="."]
+position = Vector2(-40, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_7" type="Sprite2D" parent="."]
+position = Vector2(-40, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_9" type="Sprite2D" parent="."]
+position = Vector2(-56, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_10" type="Sprite2D" parent="."]
+position = Vector2(-56, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_12" type="Sprite2D" parent="."]
+position = Vector2(40, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_13" type="Sprite2D" parent="."]
+position = Vector2(56, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_14" type="Sprite2D" parent="."]
+position = Vector2(40, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_15" type="Sprite2D" parent="."]
+position = Vector2(56, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_18" type="Sprite2D" parent="."]
+position = Vector2(24, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_19" type="Sprite2D" parent="."]
+position = Vector2(24, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_21" type="Sprite2D" parent="."]
+position = Vector2(8, -24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_22" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_24" type="Sprite2D" parent="."]
+position = Vector2(-24, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_25" type="Sprite2D" parent="."]
+position = Vector2(-8, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_26" type="Sprite2D" parent="."]
+position = Vector2(-24, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_27" type="Sprite2D" parent="."]
+position = Vector2(-8, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_28" type="Sprite2D" parent="."]
+position = Vector2(-24, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_29" type="Sprite2D" parent="."]
+position = Vector2(-8, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_30" type="Sprite2D" parent="."]
+position = Vector2(-40, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_31" type="Sprite2D" parent="."]
+position = Vector2(-40, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_32" type="Sprite2D" parent="."]
+position = Vector2(-40, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_33" type="Sprite2D" parent="."]
+position = Vector2(-56, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_34" type="Sprite2D" parent="."]
+position = Vector2(-56, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_35" type="Sprite2D" parent="."]
+position = Vector2(-56, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_36" type="Sprite2D" parent="."]
+position = Vector2(40, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_37" type="Sprite2D" parent="."]
+position = Vector2(56, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_38" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_39" type="Sprite2D" parent="."]
+position = Vector2(56, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_40" type="Sprite2D" parent="."]
+position = Vector2(40, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_41" type="Sprite2D" parent="."]
+position = Vector2(56, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_42" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_43" type="Sprite2D" parent="."]
+position = Vector2(24, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_44" type="Sprite2D" parent="."]
+position = Vector2(24, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_45" type="Sprite2D" parent="."]
+position = Vector2(8, 24)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_46" type="Sprite2D" parent="."]
+position = Vector2(8, 40)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Spike_47" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_gdudr")
+script = ExtResource("2_n3dir")
+
+[node name="Edge_0" type="Sprite2D" parent="."]
+position = Vector2(61, -32)
+rotation = 1.5708
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_2" type="Sprite2D" parent="."]
+position = Vector2(61, 32)
+rotation = 1.5708
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_3" type="Sprite2D" parent="."]
+position = Vector2(61, 0)
+rotation = 1.5708
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_1" type="Sprite2D" parent="."]
+position = Vector2(-61, -32)
+rotation = 4.71239
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_4" type="Sprite2D" parent="."]
+position = Vector2(-61, 32)
+rotation = 4.71239
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_5" type="Sprite2D" parent="."]
+position = Vector2(-61, 0)
+rotation = 4.71239
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_6" type="Sprite2D" parent="."]
+position = Vector2(-16, 45)
+rotation = 3.14159
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_7" type="Sprite2D" parent="."]
+position = Vector2(48, 45)
+rotation = 3.14159
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_8" type="Sprite2D" parent="."]
+position = Vector2(16, 45)
+rotation = 3.14159
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_9" type="Sprite2D" parent="."]
+position = Vector2(-48, 45)
+rotation = 3.14159
+texture = ExtResource("5_f1y4c")
+script = ExtResource("6_vnm8b")
+
+[node name="Edge_10" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-48, -42.5)
+texture = ExtResource("7_xro36")
+script = ExtResource("8_qadqw")
+
+[node name="Edge_11" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-16, -42.5)
+texture = ExtResource("7_xro36")
+script = ExtResource("8_qadqw")
+
+[node name="Edge_12" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(16, -42.5)
+texture = ExtResource("7_xro36")
+script = ExtResource("8_qadqw")
+
+[node name="Edge_13" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(48, -42.5)
+texture = ExtResource("7_xro36")
+script = ExtResource("8_qadqw")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_entered"]

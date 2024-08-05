@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkurae46aw155"]
+
+[ext_resource type="Texture2D" uid="uid://chfydhb0qqrkt" path="res://assets/textures/room_assets/furniture/alter.png" id="1_cl0f0"]
+[ext_resource type="Script" path="res://scripts/room_scripts/alter.gd" id="1_m4pj0"]
+[ext_resource type="Texture2D" uid="uid://sbwo4ua3ancj" path="res://assets/textures/room_assets/decoration/red_skull_statue.png" id="3_7rxh4"]
+[ext_resource type="Texture2D" uid="uid://bcgpa8v5kh74n" path="res://assets/textures/room_assets/decoration/blue_skull_statue.png" id="4_1k40p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhhy4"]
+size = Vector2(20, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cldn1"]
+size = Vector2(38, 26)
+
+[node name="Alter" type="Node2D"]
+script = ExtResource("1_m4pj0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_cl0f0")
+metadata/_edit_lock_ = true
+
+[node name="Red_Statue" type="Sprite2D" parent="."]
+position = Vector2(-6, -19)
+texture = ExtResource("3_7rxh4")
+
+[node name="Blue_Statue" type="Sprite2D" parent="."]
+position = Vector2(6, -19)
+texture = ExtResource("4_1k40p")
+metadata/_edit_lock_ = true
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_xhhy4")
+
+[node name="Interact_Area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Interact_Area"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_cldn1")
+
+[connection signal="area_entered" from="Interact_Area" to="." method="_on_area_entered"]
+[connection signal="area_exited" from="Interact_Area" to="." method="_on_area_exited"]

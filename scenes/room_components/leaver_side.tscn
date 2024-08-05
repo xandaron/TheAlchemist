@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://wt67doewkgsf"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/Leaver.gd" id="1_yyuyr"]
+[ext_resource type="Texture2D" uid="uid://dsjh8581sobdy" path="res://assets/textures/room_assets/triggers/leaver_side_up.png" id="2_kfdje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugb5p"]
+size = Vector2(10, 13.5)
+
+[node name="Side_Front" type="Node2D"]
+script = ExtResource("1_yyuyr")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_kfdje")
+
+[node name="Trigger" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Trigger"]
+position = Vector2(3, 6)
+shape = SubResource("RectangleShape2D_ugb5p")
+
+[connection signal="area_entered" from="Trigger" to="." method="_on_trigger_entered"]
+[connection signal="area_exited" from="Trigger" to="." method="_on_trigger_exited"]

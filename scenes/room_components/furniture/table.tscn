@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbgpodhjt3ay4"]
+
+[ext_resource type="Texture2D" uid="uid://creq5wf76cvpn" path="res://assets/textures/room_assets/furniture/large_table_horizontal.png" id="1_kjdv6"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hae1w"]
+cull_mode = 2
+polygon = PackedVector2Array(-48, -16, -48, 8, 48, 8, 48, -16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0q5r"]
+size = Vector2(96, 24)
+
+[node name="Table" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_kjdv6")
+metadata/_edit_lock_ = true
+
+[node name="Occluder" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_hae1w")
+metadata/_edit_lock_ = true
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_l0q5r")

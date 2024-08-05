@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bal0iey82udli"]
+
+[ext_resource type="Texture2D" uid="uid://cm58mutdym71m" path="res://assets/textures/room_assets/walls/brick.png" id="1_kacn7"]
+[ext_resource type="Texture2D" uid="uid://bs6jqj4hp5yo1" path="res://assets/textures/room_assets/wall_toppers/double/double_01.png" id="2_03l0d"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/wall.gd" id="2_ci4kn"]
+[ext_resource type="Texture2D" uid="uid://rnogj5fxubu3" path="res://assets/textures/room_assets/wall_toppers/short_double/short_double_01.png" id="3_bygis"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/double_topper.gd" id="4_wuqv4"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/short_double_topper.gd" id="6_6ci17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3uio"]
+size = Vector2(48, 4)
+
+[node name="Wall_3" type="Node2D"]
+z_index = -1
+
+[node name="Wall_00" type="Sprite2D" parent="."]
+position = Vector2(16, -16)
+texture = ExtResource("1_kacn7")
+script = ExtResource("2_ci4kn")
+
+[node name="Wall_01" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_kacn7")
+script = ExtResource("2_ci4kn")
+
+[node name="Wall_02" type="Sprite2D" parent="."]
+position = Vector2(-16, -16)
+texture = ExtResource("1_kacn7")
+script = ExtResource("2_ci4kn")
+
+[node name="Topper_00" type="Sprite2D" parent="."]
+position = Vector2(8, -26.5)
+texture = ExtResource("2_03l0d")
+script = ExtResource("4_wuqv4")
+
+[node name="Short_Topper_00" type="Sprite2D" parent="."]
+position = Vector2(-16, -26.5)
+texture = ExtResource("3_bygis")
+script = ExtResource("6_6ci17")
+
+[node name="Body" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_s3uio")

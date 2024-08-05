@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgri5x36xf877"]
+
+[ext_resource type="Script" path="res://scripts/scene.gd" id="1_8nsuj"]
+[ext_resource type="PackedScene" uid="uid://bus4ua0jroihg" path="res://scenes/player.tscn" id="2_j2720"]
+[ext_resource type="PackedScene" uid="uid://cwv0dil0xe2fi" path="res://scenes/potion.tscn" id="3_1tjjb"]
+[ext_resource type="PackedScene" uid="uid://1kwl3e8dkoi4" path="res://scenes/rooms/feast_room.tscn" id="3_tt2cw"]
+[ext_resource type="Script" path="res://scripts/player/camera.gd" id="6_qcapk"]
+[ext_resource type="Texture2D" uid="uid://cn3r6n12woxgw" path="res://assets/textures/bottle.png" id="7_m1mrc"]
+[ext_resource type="Script" path="res://scripts/ui/potion_crafting.gd" id="7_nspdk"]
+[ext_resource type="Texture2D" uid="uid://deaxmpw4vobay" path="res://assets/textures/item_icons/nil.png" id="9_p1y1t"]
+[ext_resource type="Script" path="res://scripts/room_scripts/rooms.gd" id="17_3om0c"]
+
+[node name="Root" type="Node"]
+
+[node name="Scene" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("1_8nsuj")
+
+[node name="Player" parent="Scene" instance=ExtResource("2_j2720")]
+position = Vector2(-96, 0)
+potion_scene = ExtResource("3_1tjjb")
+metadata/_edit_lock_ = true
+
+[node name="Rooms" type="Node2D" parent="Scene"]
+y_sort_enabled = true
+script = ExtResource("17_3om0c")
+metadata/_edit_lock_ = true
+
+[node name="Feast_Room" parent="Scene/Rooms" instance=ExtResource("3_tt2cw")]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-861, 0)
+zoom = Vector2(3, 3)
+process_callback = 0
+script = ExtResource("6_qcapk")
+
+[node name="Potion_Craft_UI" type="Control" parent="Camera"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_nspdk")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="Camera/Potion_Craft_UI"]
+layout_mode = 0
+offset_right = 384.0
+offset_bottom = 216.0
+color = Color(0, 0, 0, 0.741176)
+metadata/_edit_lock_ = true
+
+[node name="Potions" type="ItemList" parent="Camera/Potion_Craft_UI"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 9.0
+offset_right = 219.0
+offset_bottom = 29.0
+text_overrun_behavior = 0
+item_count = 3
+max_columns = 3
+same_column_width = true
+item_0/text = ""
+item_0/icon = ExtResource("7_m1mrc")
+item_1/text = ""
+item_1/icon = ExtResource("7_m1mrc")
+item_2/text = ""
+item_2/icon = ExtResource("7_m1mrc")
+metadata/_edit_lock_ = true
+
+[node name="Slots" type="ItemList" parent="Camera/Potion_Craft_UI"]
+offset_left = 167.0
+offset_top = 34.0
+offset_right = 219.0
+offset_bottom = 54.0
+text_overrun_behavior = 0
+item_count = 3
+max_columns = 3
+same_column_width = true
+item_0/text = ""
+item_0/icon = ExtResource("9_p1y1t")
+item_1/text = ""
+item_1/icon = ExtResource("9_p1y1t")
+item_2/text = ""
+item_2/icon = ExtResource("9_p1y1t")
+metadata/_edit_lock_ = true
+
+[node name="Ingredients" type="ItemList" parent="Camera/Potion_Craft_UI"]
+offset_left = 96.0
+offset_top = 59.0
+offset_right = 289.0
+offset_bottom = 165.0
+mouse_filter = 1
+allow_search = false
+auto_height = true
+text_overrun_behavior = 0
+max_columns = 100000
+icon_mode = 0
+metadata/_edit_lock_ = true
+
+[connection signal="item_selected" from="Camera/Potion_Craft_UI/Potions" to="Camera/Potion_Craft_UI" method="_on_potion_selected"]
+[connection signal="item_selected" from="Camera/Potion_Craft_UI/Slots" to="Camera/Potion_Craft_UI" method="_on_slot_selected"]
+[connection signal="item_selected" from="Camera/Potion_Craft_UI/Ingredients" to="Camera/Potion_Craft_UI" method="_on_mod_selected"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2uf8uq1mupsw"]
+
+[ext_resource type="AudioStream" uid="uid://b02ilwcfaxsvk" path="res://assets/audio/lever_pull_8bit.wav" id="1_bputr"]
+[ext_resource type="Script" path="res://scripts/death_sound.gd" id="2_ulndb"]
+
+[node name="Leaver_Pull" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_bputr")
+autoplay = true
+script = ExtResource("2_ulndb")

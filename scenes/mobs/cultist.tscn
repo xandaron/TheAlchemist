@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdn4ytnd1o6r2"]
+
+[ext_resource type="Script" path="res://scripts/mobs/cultist.gd" id="1_iwiyo"]
+[ext_resource type="Texture2D" uid="uid://d1061h7hdxlhf" path="res://assets/textures/mobs/cultist/back.png" id="2_p8p7c"]
+[ext_resource type="Texture2D" uid="uid://c73i3hdiadi80" path="res://assets/textures/mobs/cultist/front.png" id="3_b6grp"]
+[ext_resource type="Texture2D" uid="uid://dnmkko8rr018v" path="res://assets/textures/mobs/cultist/left.png" id="4_i1uso"]
+[ext_resource type="Texture2D" uid="uid://1bcxq1ogeqx6" path="res://assets/textures/mobs/cultist/right.png" id="5_ck6g6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x06j3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b6grp")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b6grp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i1uso")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ck6g6")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i1uso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p8p7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ck6g6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b6grp")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p8p7c")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2qki"]
+size = Vector2(10, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wrmko"]
+radius = 8.544
+
+[node name="Cultist" type="CharacterBody2D"]
+position = Vector2(0, -5)
+collision_layer = 4
+collision_mask = 26
+script = ExtResource("1_iwiyo")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x06j3")
+animation = &"spawn"
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_r2qki")
+metadata/_edit_lock_ = true
+
+[node name="Attack_Area" type="Area2D" parent="."]
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="Bounding_Ellipse" type="CollisionShape2D" parent="Attack_Area"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_wrmko")
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_spawn_finished"]
+[connection signal="area_entered" from="Attack_Area" to="." method="_on_attack_area_entered"]
+[connection signal="area_exited" from="Attack_Area" to="." method="_on_attack_area_exited"]

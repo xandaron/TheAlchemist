@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://3umscgmq24no"]
+
+[ext_resource type="AudioStream" uid="uid://mugikmsxyn2l" path="res://assets/audio/grinding_cobblestone_8bit.wav" id="1_3rap5"]
+[ext_resource type="Script" path="res://scripts/death_sound.gd" id="2_x61g0"]
+
+[node name="Grinding_Stone" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_3rap5")
+autoplay = true
+script = ExtResource("2_x61g0")

@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://hhmh6jhx78df"]
+
+[ext_resource type="Texture2D" uid="uid://b40j86wwt6o7g" path="res://assets/textures/room_assets/doors/double_vertical_closed.png" id="1_byjlw"]
+[ext_resource type="Script" path="res://scripts/room_scripts/vertical_door.gd" id="1_jivs7"]
+[ext_resource type="Texture2D" uid="uid://dw65ep2stkips" path="res://assets/textures/room_assets/doors/double_vertical_open.png" id="1_mv81q"]
+[ext_resource type="Texture2D" uid="uid://l77mstopdtie" path="res://assets/textures/room_assets/wall_toppers/single/single_03.png" id="2_kvpnp"]
+[ext_resource type="Texture2D" uid="uid://cft6ydaqmnwt5" path="res://assets/textures/room_assets/wall_toppers/short_single/short_single_00.png" id="4_lrnb5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtjcw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_byjlw")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mv81q")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i0ikd"]
+polygon = PackedVector2Array(21, -13, 21, -15, 11, -15, 11, -23, 5, -23, 5, -24, -1, -24, -1, -13)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ge6im"]
+polygon = PackedVector2Array(21, 13, 21, 15, 11, 15, 11, 23, 5, 23, 5, 24, -1, 24, -1, 13)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_elp5p"]
+polygon = PackedVector2Array(-1, -24, 5, -24, 5, -23, 11, -23, 11, 23, 5, 23, 5, 24, -1, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pua4"]
+size = Vector2(6, 46)
+
+[node name="Double_Door" type="Node2D"]
+script = ExtResource("1_jivs7")
+fade_distance = Vector2(8, 32)
+fade_y_offset = 32
+
+[node name="Door" type="AnimatedSprite2D" parent="."]
+position = Vector2(11.0001, 1.14441e-05)
+sprite_frames = SubResource("SpriteFrames_jtjcw")
+animation = &"open"
+
+[node name="Open" type="Node2D" parent="."]
+position = Vector2(-1.99991, 1.14441e-05)
+
+[node name="Occluder_00" type="LightOccluder2D" parent="Open"]
+occluder = SubResource("OccluderPolygon2D_i0ikd")
+
+[node name="Occluder_01" type="LightOccluder2D" parent="Open"]
+occluder = SubResource("OccluderPolygon2D_ge6im")
+
+[node name="Closed" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_elp5p")
+
+[node name="Body" type="StaticBody2D" parent="."]
+position = Vector2(-1.99991, 1.14441e-05)
+collision_layer = 0
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_5pua4")
+
+[node name="Double_Sided_Topper" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+rotation = -1.5708
+scale = Vector2(1, 1.00001)
+texture = ExtResource("2_kvpnp")
+
+[node name="Short_Topper" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+rotation = -1.5708
+scale = Vector2(1, 1.00001)
+texture = ExtResource("4_lrnb5")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch8fkfavfelpo"]
+
+[ext_resource type="Texture2D" uid="uid://c7sqb078t7bx0" path="res://assets/textures/item_icons/liches_bone.png" id="1_j1rjb"]
+[ext_resource type="Script" path="res://scripts/reward_sprite.gd" id="1_pi4ek"]
+
+[sub_resource type="Gradient" id="Gradient_bekdg"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.051971, 0.051971, 0.051971, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_na4ep"]
+gradient = SubResource("Gradient_bekdg")
+
+[node name="Reward_Sprite" type="Sprite2D"]
+texture = ExtResource("1_j1rjb")
+script = ExtResource("1_pi4ek")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(0.15625, 0.15625)
+texture = SubResource("GradientTexture2D_na4ep")

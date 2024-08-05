@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdva5gb8mg1yl"]
+
+[ext_resource type="Texture2D" uid="uid://dvmt1p1grvtwc" path="res://assets/textures/room_assets/floors/wood.png" id="1_5mk5i"]
+[ext_resource type="Texture2D" uid="uid://cl3qnve0srpvk" path="res://assets/textures/room_assets/wall_toppers/single/single_08.png" id="2_cgvto"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/single_topper.gd" id="3_dxopm"]
+[ext_resource type="Texture2D" uid="uid://b87xkk8dd4kpn" path="res://assets/textures/room_assets/wall_toppers/short_single/short_single_05.png" id="4_chwtc"]
+[ext_resource type="Script" path="res://scripts/room_scripts/random_assets/short_single_topper.gd" id="5_altim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k50mf"]
+size = Vector2(4, 114)
+
+[node name="Short_Vertical_Corridor" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-8, -48)
+texture = ExtResource("1_5mk5i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(8, -48)
+texture = ExtResource("1_5mk5i")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-8, -16)
+texture = ExtResource("1_5mk5i")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(8, -16)
+texture = ExtResource("1_5mk5i")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-8, 16)
+texture = ExtResource("1_5mk5i")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(8, 16)
+texture = ExtResource("1_5mk5i")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-8, 35)
+texture = ExtResource("1_5mk5i")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(8, 35)
+texture = ExtResource("1_5mk5i")
+
+[node name="Side_Wall3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-21, -61)
+rotation = 4.71239
+texture = ExtResource("2_cgvto")
+script = ExtResource("3_dxopm")
+
+[node name="Side_Wall4" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-21, -29)
+rotation = 4.71239
+texture = ExtResource("2_cgvto")
+script = ExtResource("3_dxopm")
+
+[node name="Side_Wall5" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-21, 3)
+rotation = 4.71239
+texture = ExtResource("2_cgvto")
+script = ExtResource("3_dxopm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-22, -6)
+shape = SubResource("RectangleShape2D_k50mf")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(22, -6)
+shape = SubResource("RectangleShape2D_k50mf")
+metadata/_edit_lock_ = true
+
+[node name="Side_Wall9" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-21, -85)
+rotation = 4.71239
+texture = ExtResource("4_chwtc")
+script = ExtResource("5_altim")
+
+[node name="Side_Wall6" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(21, -61)
+rotation = 1.5708
+texture = ExtResource("2_cgvto")
+script = ExtResource("3_dxopm")
+
+[node name="Side_Wall7" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(21, -29)
+rotation = 1.5708
+texture = ExtResource("2_cgvto")
+script = ExtResource("3_dxopm")
+
+[node name="Side_Wall8" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(21, 3)
+rotation = 1.5708
+texture = ExtResource("2_cgvto")
+script = ExtResource("3_dxopm")
+
+[node name="Side_Wall10" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(21, -85)
+rotation = 1.5708
+texture = ExtResource("4_chwtc")
+script = ExtResource("5_altim")

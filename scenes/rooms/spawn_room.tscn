@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmgw6npvj77dp"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/spawn.gd" id="1_qt7qf"]
+[ext_resource type="PackedScene" uid="uid://dgragmjm2tflw" path="res://scenes/room_components/walls/vertical_side_wall.tscn" id="2_rmawm"]
+[ext_resource type="PackedScene" uid="uid://d34ggcyw3hmrf" path="res://scenes/room_components/walls/short_horizontal_wall.tscn" id="3_ftybb"]
+[ext_resource type="Texture2D" uid="uid://drqqwj6a8b7sx" path="res://assets/textures/room_assets/floors/wood_corridor_straight.png" id="4_i0vld"]
+[ext_resource type="PackedScene" uid="uid://dc1qa7frrqdf8" path="res://scenes/room_components/item_chest.tscn" id="5_q78qf"]
+[ext_resource type="PackedScene" uid="uid://compap2wgaimn" path="res://scenes/room_components/lights/candelabra.tscn" id="5_tmos8"]
+
+[node name="Spawn_Room" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_qt7qf")
+
+[node name="Left_Wall" parent="." instance=ExtResource("2_rmawm")]
+position = Vector2(-96, 1)
+metadata/_edit_lock_ = true
+
+[node name="Right_Wall" parent="." instance=ExtResource("2_rmawm")]
+position = Vector2(96, 0)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Top_Wall" parent="." instance=ExtResource("3_ftybb")]
+position = Vector2(0, -128)
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Wall" parent="." instance=ExtResource("3_ftybb")]
+y_sort_enabled = true
+position = Vector2(0, 128)
+metadata/_edit_lock_ = true
+
+[node name="Area2D" parent="Bottom_Wall" index="10"]
+scale = Vector2(1, -1)
+
+[node name="Candelabra_0" parent="." instance=ExtResource("5_tmos8")]
+position = Vector2(-84, -120)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_1" parent="." instance=ExtResource("5_tmos8")]
+position = Vector2(84, -120)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_2" parent="." instance=ExtResource("5_tmos8")]
+position = Vector2(84, 120)
+metadata/_edit_lock_ = true
+
+[node name="Candelabra_3" parent="." instance=ExtResource("5_tmos8")]
+position = Vector2(-84, 120)
+metadata/_edit_lock_ = true
+
+[node name="Item_Chest" parent="." instance=ExtResource("5_q78qf")]
+position = Vector2(0, -22)
+
+[node name="Floor1" type="Sprite2D" parent="."]
+z_index = -10
+rotation = 1.5708
+texture = ExtResource("4_i0vld")
+metadata/_edit_lock_ = true
+
+[node name="Floor2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(64, 0)
+rotation = 1.5708
+texture = ExtResource("4_i0vld")
+metadata/_edit_lock_ = true
+
+[node name="Floor3" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-64, 0)
+rotation = 1.5708
+texture = ExtResource("4_i0vld")
+metadata/_edit_lock_ = true
+
+[connection signal="room_entered" from="Top_Wall" to="." method="_on_room_entered"]
+[connection signal="room_entered" from="Bottom_Wall" to="." method="_on_room_entered"]
+
+[editable path="Bottom_Wall"]

@@ -1,0 +1,353 @@
+[gd_scene load_steps=28 format=3 uid="uid://dgri5x36xf877"]
+
+[ext_resource type="Script" path="res://scripts/scene.gd" id="1_6rgd4"]
+[ext_resource type="PackedScene" uid="uid://bus4ua0jroihg" path="res://scenes/player/player.tscn" id="2_glg6m"]
+[ext_resource type="Script" path="res://scripts/room_scripts/rooms.gd" id="3_psx6y"]
+[ext_resource type="PackedScene" uid="uid://bsekbv05ybl30" path="res://scenes/rooms/fire_room.tscn" id="4_jfw8o"]
+[ext_resource type="PackedScene" uid="uid://b844lhw1p53sq" path="res://scenes/rooms/compass_room.tscn" id="4_kmeop"]
+[ext_resource type="PackedScene" uid="uid://1kdoa0vb61vd" path="res://scenes/rooms/alter_room.tscn" id="4_nt6sk"]
+[ext_resource type="PackedScene" uid="uid://1kwl3e8dkoi4" path="res://scenes/rooms/feast_room.tscn" id="4_shkia"]
+[ext_resource type="PackedScene" uid="uid://x80425ym6dq0" path="res://scenes/rooms/wood_vertical_corridor.tscn" id="6_htvk6"]
+[ext_resource type="Script" path="res://scripts/player/camera.gd" id="7_wfrra"]
+[ext_resource type="PackedScene" uid="uid://cdva5gb8mg1yl" path="res://scenes/rooms/short_vertical_corridor.tscn" id="8_g6fn0"]
+[ext_resource type="Script" path="res://scripts/ui/main_ui_controller.gd" id="8_ky7if"]
+[ext_resource type="Texture2D" uid="uid://cnsoo0o1rwjgq" path="res://assets/textures/ui/health_damage_0.png" id="9_j6k6b"]
+[ext_resource type="PackedScene" uid="uid://cgfepo3dkb0sf" path="res://scenes/rooms/wood_corridor_l.tscn" id="10_cq3jp"]
+[ext_resource type="PackedScene" uid="uid://dmgw6npvj77dp" path="res://scenes/rooms/spawn_room.tscn" id="10_h8hh3"]
+[ext_resource type="Script" path="res://scripts/ui/health.gd" id="10_wlwso"]
+[ext_resource type="Texture2D" uid="uid://lnipydvp6nod" path="res://assets/textures/ui/health_liquid_mask.png" id="11_wabpc"]
+[ext_resource type="Texture2D" uid="uid://nbyqu8ykqq2t" path="res://assets/textures/ui/active_potion.png" id="12_jniek"]
+[ext_resource type="Script" path="res://scripts/ui/active_potion.gd" id="13_0qkl8"]
+[ext_resource type="Texture2D" uid="uid://deaxmpw4vobay" path="res://assets/textures/item_icons/nil.png" id="14_makys"]
+[ext_resource type="Texture2D" uid="uid://b07qulmro84po" path="res://assets/textures/ui/active_liquid_mask.png" id="15_1t4ai"]
+[ext_resource type="Texture2D" uid="uid://wkb41wxl0fp3" path="res://assets/textures/ui/stamina.png" id="16_1uohy"]
+[ext_resource type="Script" path="res://scripts/ui/stamina.gd" id="17_h7jds"]
+[ext_resource type="Texture2D" uid="uid://2cgijnwa4mhf" path="res://assets/textures/ui/stamina_liquid_mask.png" id="18_5vg71"]
+[ext_resource type="Texture2D" uid="uid://767oygg1ojnr" path="res://potion_liquid_gradient.tres" id="18_nhjc6"]
+[ext_resource type="Script" path="res://scripts/ui/potion_crafting.gd" id="19_csg3j"]
+[ext_resource type="Texture2D" uid="uid://cn3r6n12woxgw" path="res://assets/textures/bottle.png" id="20_prx85"]
+[ext_resource type="AudioStream" uid="uid://dxsi1cskbq76h" path="res://assets/audio/background_music_8bit.mp3" id="27_o3c2p"]
+
+[node name="Root" type="Node"]
+
+[node name="Scene" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("1_6rgd4")
+
+[node name="Player" parent="Scene" instance=ExtResource("2_glg6m")]
+position = Vector2(-1, 30)
+
+[node name="Rooms" type="Node2D" parent="Scene"]
+y_sort_enabled = true
+script = ExtResource("3_psx6y")
+
+[node name="Compass_Room" parent="Scene/Rooms" instance=ExtResource("4_kmeop")]
+position = Vector2(-496, -739)
+metadata/_edit_lock_ = true
+
+[node name="Fire_Room" parent="Scene/Rooms" instance=ExtResource("4_jfw8o")]
+position = Vector2(-424, -227)
+metadata/_edit_lock_ = true
+
+[node name="Feast_Room" parent="Scene/Rooms" instance=ExtResource("4_shkia")]
+position = Vector2(0, -512)
+left = 1
+top = 1
+bottom = 4
+
+[node name="Alter_Room" parent="Scene/Rooms" instance=ExtResource("4_nt6sk")]
+position = Vector2(-144, -883)
+left = 2
+bottom = 2
+
+[node name="Short_Vertical_Corridor" parent="Scene" instance=ExtResource("8_g6fn0")]
+position = Vector2(-72, -691)
+metadata/_edit_lock_ = true
+
+[node name="Spawn_Room" parent="Scene" instance=ExtResource("10_h8hh3")]
+metadata/_edit_lock_ = true
+
+[node name="Wood_Vertical_Corridor" parent="Scene" instance=ExtResource("6_htvk6")]
+position = Vector2(0, -256)
+metadata/_edit_lock_ = true
+
+[node name="Wood_Vertical_Corridor2" parent="Scene" instance=ExtResource("6_htvk6")]
+position = Vector2(-496, -483)
+metadata/_edit_lock_ = true
+
+[node name="Wood_Corridor_L" parent="Scene" instance=ExtResource("10_cq3jp")]
+position = Vector2(-288, -418)
+metadata/_edit_lock_ = true
+
+[node name="Wood_Corridor_L2" parent="Scene" instance=ExtResource("10_cq3jp")]
+position = Vector2(-432, -931)
+metadata/_edit_lock_ = true
+
+[node name="Camera" type="Camera2D" parent="."]
+top_level = true
+light_mask = 0
+z_index = 10
+position = Vector2(-861, 0)
+zoom = Vector2(6, 6)
+process_callback = 0
+position_smoothing_speed = 100.0
+script = ExtResource("7_wfrra")
+
+[node name="UI" type="Control" parent="Camera"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -107.0
+offset_right = 192.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_ky7if")
+metadata/_edit_use_anchors_ = true
+
+[node name="Player_UI" type="Control" parent="Camera/UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Health" type="TextureRect" parent="Camera/UI/Player_UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+offset_left = -176.0
+offset_top = -98.0
+offset_right = -142.0
+offset_bottom = -55.0
+texture = ExtResource("9_j6k6b")
+stretch_mode = 2
+script = ExtResource("10_wlwso")
+
+[node name="Liquid_Mask" type="Sprite2D" parent="Camera/UI/Player_UI/Health"]
+clip_children = 1
+light_mask = 0
+visibility_layer = 2
+z_index = -1
+position = Vector2(17, 25)
+texture = ExtResource("11_wabpc")
+
+[node name="Liquid" type="Sprite2D" parent="Camera/UI/Player_UI/Health/Liquid_Mask"]
+modulate = Color(1, 0, 0, 1)
+light_mask = 0
+visibility_layer = 2
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(0.46875, 0.5)
+texture = ExtResource("18_nhjc6")
+
+[node name="Active_Potion" type="TextureRect" parent="Camera/UI/Player_UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = 49.0
+offset_right = -137.0
+offset_bottom = 98.0
+grow_vertical = 0
+texture = ExtResource("12_jniek")
+stretch_mode = 2
+script = ExtResource("13_0qkl8")
+
+[node name="Ingredient_0" type="Sprite2D" parent="Camera/UI/Player_UI/Active_Potion"]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(6, 18)
+texture = ExtResource("14_makys")
+
+[node name="Ingredient_1" type="Sprite2D" parent="Camera/UI/Player_UI/Active_Potion"]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(22, 6)
+texture = ExtResource("14_makys")
+
+[node name="Ingredient_2" type="Sprite2D" parent="Camera/UI/Player_UI/Active_Potion"]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(38, 18)
+texture = ExtResource("14_makys")
+
+[node name="Liquid_Mask" type="Sprite2D" parent="Camera/UI/Player_UI/Active_Potion"]
+clip_children = 1
+light_mask = 0
+visibility_layer = 2
+z_index = -1
+position = Vector2(22, 34.5)
+texture = ExtResource("15_1t4ai")
+
+[node name="Liquid" type="Sprite2D" parent="Camera/UI/Player_UI/Active_Potion/Liquid_Mask"]
+modulate = Color(0.196078, 0.588235, 1, 1)
+light_mask = 0
+visibility_layer = 2
+scale = Vector2(0.374998, 0.390625)
+texture = ExtResource("18_nhjc6")
+
+[node name="Stamina" type="TextureRect" parent="Camera/UI/Player_UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -25.0
+offset_right = -159.0
+offset_bottom = 24.0
+grow_vertical = 2
+texture = ExtResource("16_1uohy")
+stretch_mode = 2
+script = ExtResource("17_h7jds")
+
+[node name="Liquid_Mask" type="Sprite2D" parent="Camera/UI/Player_UI/Stamina"]
+clip_children = 1
+light_mask = 0
+visibility_layer = 2
+z_index = -1
+position = Vector2(9, 27.5)
+texture = ExtResource("18_5vg71")
+
+[node name="Liquid" type="Sprite2D" parent="Camera/UI/Player_UI/Stamina/Liquid_Mask"]
+modulate = Color(0.067229, 0.894065, 0.205327, 1)
+light_mask = 0
+visibility_layer = 2
+position = Vector2(-7.7486e-06, 0.500004)
+scale = Vector2(0.21875, 0.625)
+texture = ExtResource("18_nhjc6")
+
+[node name="Potion_Craft_UI" type="Control" parent="Camera/UI"]
+visible = false
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_csg3j")
+
+[node name="Background" type="ColorRect" parent="Camera/UI/Potion_Craft_UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.741176)
+metadata/_edit_lock_ = true
+
+[node name="Potions" type="ItemList" parent="Camera/UI/Potion_Craft_UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -80.0
+offset_right = 30.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+text_overrun_behavior = 0
+item_count = 3
+max_columns = 3
+same_column_width = true
+item_0/text = ""
+item_0/icon = ExtResource("20_prx85")
+item_1/text = ""
+item_1/icon = ExtResource("20_prx85")
+item_2/text = ""
+item_2/icon = ExtResource("20_prx85")
+metadata/_edit_lock_ = true
+
+[node name="Slots" type="ItemList" parent="Camera/UI/Potion_Craft_UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -57.0
+offset_right = 30.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+text_overrun_behavior = 0
+item_count = 3
+max_columns = 3
+same_column_width = true
+item_0/text = ""
+item_0/icon = ExtResource("14_makys")
+item_1/text = ""
+item_1/icon = ExtResource("14_makys")
+item_2/text = ""
+item_2/icon = ExtResource("14_makys")
+metadata/_edit_lock_ = true
+
+[node name="Ingredients" type="ItemList" parent="Camera/UI/Potion_Craft_UI"]
+light_mask = 0
+visibility_layer = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.0
+offset_top = -35.0
+offset_right = 96.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+allow_search = false
+auto_height = true
+text_overrun_behavior = 0
+max_columns = 100000
+icon_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Background_Music" type="AudioStreamPlayer2D" parent="Camera"]
+position = Vector2(861, 0)
+stream = ExtResource("27_o3c2p")
+autoplay = true
+
+[connection signal="item_selected" from="Camera/UI/Potion_Craft_UI/Potions" to="Camera/UI/Potion_Craft_UI" method="_on_potion_selected"]
+[connection signal="item_selected" from="Camera/UI/Potion_Craft_UI/Slots" to="Camera/UI/Potion_Craft_UI" method="_on_slot_selected"]
+[connection signal="item_selected" from="Camera/UI/Potion_Craft_UI/Ingredients" to="Camera/UI/Potion_Craft_UI" method="_on_ingredient_selected"]
+
+[editable path="Scene/Player"]

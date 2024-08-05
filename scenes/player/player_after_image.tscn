@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://75d3307kumps"]
+
+[ext_resource type="Script" path="res://scripts/player/player_after_image.gd" id="2_uea58"]
+[ext_resource type="Texture2D" uid="uid://bf3r2fgndf6dl" path="res://assets/textures/player/alchemist .png" id="2_vidrl"]
+
+[node name="Player_After_Image" type="Node2D"]
+script = ExtResource("2_uea58")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+texture = ExtResource("2_vidrl")

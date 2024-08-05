@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy634mlyijksu"]
+
+[ext_resource type="PackedScene" uid="uid://dbgpodhjt3ay4" path="res://scenes/room_components/furniture/table.tscn" id="1_ogov0"]
+[ext_resource type="PackedScene" uid="uid://dqohgp7sbblgn" path="res://scenes/room_components/furniture/side_chair.tscn" id="2_rfcmd"]
+[ext_resource type="PackedScene" uid="uid://dbjvp4rdfxtq0" path="res://scenes/room_components/furniture/front_chair.tscn" id="3_csssu"]
+[ext_resource type="PackedScene" uid="uid://bxiwck3pv7et4" path="res://scenes/room_components/furniture/back_chair.tscn" id="4_8egjs"]
+
+[node name="Table_Set" type="Node2D"]
+
+[node name="Table" parent="." instance=ExtResource("1_ogov0")]
+metadata/_edit_lock_ = true
+
+[node name="Side_Chair_00" parent="." instance=ExtResource("2_rfcmd")]
+position = Vector2(48, -1)
+metadata/_edit_lock_ = true
+
+[node name="Side_Chair_01" parent="." instance=ExtResource("2_rfcmd")]
+position = Vector2(-48, -1)
+rotation = 3.14159
+scale = Vector2(1, -1)
+metadata/_edit_lock_ = true
+
+[node name="Front_Chair_00" parent="." instance=ExtResource("3_csssu")]
+position = Vector2(-33, -16)
+metadata/_edit_lock_ = true
+
+[node name="Front_Chair_01" parent="." instance=ExtResource("3_csssu")]
+position = Vector2(-12, -16)
+metadata/_edit_lock_ = true
+
+[node name="Front_Chair_02" parent="." instance=ExtResource("3_csssu")]
+position = Vector2(12, -16)
+metadata/_edit_lock_ = true
+
+[node name="Front_Chair_03" parent="." instance=ExtResource("3_csssu")]
+position = Vector2(33, -16)
+metadata/_edit_lock_ = true
+
+[node name="Back_Chair_00" parent="." instance=ExtResource("4_8egjs")]
+position = Vector2(-33, 12)
+metadata/_edit_lock_ = true
+
+[node name="Back_Chair_01" parent="." instance=ExtResource("4_8egjs")]
+position = Vector2(33, 12)
+metadata/_edit_lock_ = true
+
+[node name="Back_Chair_02" parent="." instance=ExtResource("4_8egjs")]
+position = Vector2(12, 12)
+metadata/_edit_lock_ = true
+
+[node name="Back_Chair_03" parent="." instance=ExtResource("4_8egjs")]
+position = Vector2(-12, 12)
+metadata/_edit_lock_ = true

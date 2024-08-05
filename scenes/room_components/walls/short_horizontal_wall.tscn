@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://d34ggcyw3hmrf"]
+
+[ext_resource type="Script" path="res://scripts/short_horizontal_wall.gd" id="1_kj5el"]
+[ext_resource type="PackedScene" uid="uid://bohit1vvpwmgh" path="res://scenes/room_components/walls/horizontal_wall_1.tscn" id="2_g0xq1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy8m1"]
+size = Vector2(8, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqoap"]
+size = Vector2(64, 7)
+
+[node name="Short_Horizontal_Wall" type="Node2D"]
+script = ExtResource("1_kj5el")
+fade_distance = Vector2(104, 32)
+
+[node name="Wall_1" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(-24, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_2" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(-40, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_3" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(-56, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_4" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(-72, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_5" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(-88, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_6" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(88, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_7" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(72, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_8" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(56, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_9" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(40, 0)
+metadata/_edit_lock_ = true
+
+[node name="Wall_10" parent="." instance=ExtResource("2_g0xq1")]
+position = Vector2(24, 0)
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-28, 10)
+shape = SubResource("RectangleShape2D_qy8m1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(28, 10)
+shape = SubResource("RectangleShape2D_qy8m1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 23.5)
+shape = SubResource("RectangleShape2D_nqoap")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_room_entered"]

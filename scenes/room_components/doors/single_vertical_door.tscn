@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://t0tdsvchnnb2"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/vertical_door.gd" id="1_muwvv"]
+[ext_resource type="Texture2D" uid="uid://dbh8h8kirh1el" path="res://assets/textures/room_assets/doors/single_vertical_closed.png" id="2_o0ejr"]
+[ext_resource type="Texture2D" uid="uid://dplh0rfjt46od" path="res://assets/textures/room_assets/doors/single_vertical_open.png" id="2_t8cki"]
+[ext_resource type="Texture2D" uid="uid://bd36qf8b054fm" path="res://assets/textures/room_assets/wall_toppers/double_sided/double_sided_02.png" id="4_yjomg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ee1ux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o0ejr")
+}],
+"loop": true,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t8cki")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_scxlb"]
+polygon = PackedVector2Array(19, -5, -3, -5, -3, -16, 3, -16, 3, -14, 9, -14, 9, -7, 19, -7)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xq8r3"]
+polygon = PackedVector2Array(-3, -5, -3, -16, 3, -16, 3, -14, 9, -14, 9, -5, 9, 7, -3, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6ojg"]
+size = Vector2(6, 28)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g85kr"]
+polygon = PackedVector2Array(9, 7, 9, 14, 3, 14, 3, 16, -3, 16, -3, 7)
+
+[node name="Single_Door" type="Node2D"]
+script = ExtResource("1_muwvv")
+fade_distance = Vector2(16, 8)
+fade_y_offset = 16
+
+[node name="Door" type="AnimatedSprite2D" parent="."]
+position = Vector2(11, 0)
+sprite_frames = SubResource("SpriteFrames_ee1ux")
+animation = &"open"
+
+[node name="Occluder_00" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_scxlb")
+
+[node name="Occluder_01" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_xq8r3")
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_r6ojg")
+
+[node name="Double_Sided_Topper" type="Sprite2D" parent="."]
+position = Vector2(-2.5, 0)
+rotation = -1.5708
+texture = ExtResource("4_yjomg")
+
+[node name="Occluder_02" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_g85kr")

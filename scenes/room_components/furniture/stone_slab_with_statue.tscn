@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc2i3ix4hi6in"]
+
+[ext_resource type="Script" path="res://scripts/room_scripts/stone_slab.gd" id="1_fha7c"]
+[ext_resource type="Texture2D" uid="uid://dt85u366du2vu" path="res://assets/textures/room_assets/furniture/stone_slab.png" id="1_naems"]
+[ext_resource type="Texture2D" uid="uid://bcgpa8v5kh74n" path="res://assets/textures/room_assets/decoration/blue_skull_statue.png" id="3_dvnfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q0iw"]
+size = Vector2(48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84131"]
+size = Vector2(48, 48)
+
+[node name="Stone_Slab_With_Statue" type="Node2D"]
+script = ExtResource("1_fha7c")
+
+[node name="Slab" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_naems")
+
+[node name="Statue" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("3_dvnfb")
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Body"]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_2q0iw")
+
+[node name="Pickup_Area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Bounding_Box" type="CollisionShape2D" parent="Pickup_Area"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_84131")
+
+[connection signal="area_entered" from="Pickup_Area" to="." method="_on_pickup_area_entered"]
+[connection signal="area_exited" from="Pickup_Area" to="." method="_on_pickup_area_exited"]
